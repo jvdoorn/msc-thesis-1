@@ -1,7 +1,8 @@
 [
   {
     "label": "Compile Thesis",
-    "command": "/Library/TeX/texbin/latexmk -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode thesis.tex; open -g thesis.pdf",
+    "command": "eval \"$(/usr/local/bin/brew shellenv)\"; latexmk -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode thesis.tex && open -g thesis.pdf",
+    // "command": "echo $PATH",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always",
