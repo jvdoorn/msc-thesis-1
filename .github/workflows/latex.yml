@@ -19,29 +19,20 @@ jobs:
         with:
           root_file: thesis.tex
           args: -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
-      - name: versioning
-        id: versioning
-        uses: codacy/git-version@2.5.4
-        with:
-          release-branch: main
-          dev-branch: development
-          minor-identifier: 'minor:'
-          major-identifier: 'major:'
-      - name: release
-        id: github-release
-        uses: actions/create-release@v1
+      - name: Determine version number
+        uses: anothrNick/github-tag-action@master
+        id: version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          RELEASE_BRANCHES: main
+          DEFAULT_BUMP: ${{ github.ref == 'refs/heads/main' && 'minor' || 'patch' }}
+          DRY_RUN: true  # We want to manually create the release.
+      - name: Release and tag
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          tag_name: ${{ steps.versioning.outputs.version }}
-          release_name: Release ${{ steps.versioning.outputs.version }}
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ steps.version.outputs.new_tag }}"
           prerelease: ${{ github.ref == 'refs/heads/main' && 'false' || 'true' }}
-      - name: upload assets
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.github-release.outputs.upload_url }}
-          asset_path: thesis.pdf
-          asset_name: thesis.pdf
-          asset_content_type: application/pdf
+          files: |
+            thesis.pdf
