@@ -1,0 +1,32 @@
+\chapter{Theory}
+\label{chap:theory}
+
+\section{Magnetic levitation}
+\label{sec:magnetic_levitation}
+Obtaining and then maintaining stable magnetic levitation requires three fields: a static homogenous field to align the magnet ($\vec{B_0}$); an alternating field containing the saddle point ($\vec{B_1}$); and a gradient field to counter the gravitational offset ($\vec{B_2}$). This follows from simulations and our previous experience \cite{perdriat,mart,eli}.
+
+The homogeneous field is given in \autoref{eq:homogeneous_field}. It is oriented in the $z$-axis with magnitude $B_0$. Homogenous fields can (locally) be created using a Helmholtz coil.
+\begin{equation}
+    \vec{B_0}(\vec{r}, t) = \vec{B_0} = B_0 \zhat
+    \label{eq:homogeneous_field}
+\end{equation}
+
+Rotating a saddle point sufficiently fast effectively creates a (local) minimum. The field is given in \autoref{eq:saddle_point}. $B_1''$ is the curvature of $\vec{B_1}$ and $\Omega / 2\pi$ the frequency of the oscillation. The field can be created using two loops of wire with a current in opposite directions in the same plane, a so called magnetic Paul Trap. These loops are the main focus of this thesis. Given the radius of the inner loop $r_1$ we can express the curvature as $B_1'' = -\frac{9}{16}\mu_0i_1/r_1^3$ where $i_1$ is the current through the loop\footnote{This uses the requirement that $i_1/i_2 = -r_1/r_2$ and that $i_1$ and $i_2$ oppose each other (clockwise and anti-clockwise).}.
+\begin{equation}
+    \vec{B_1}(\vec{r}, t) = \frac{B_1''}{2} \begin{pmatrix}
+        -xz \\
+        +yz \\
+        z^2 - \frac{1}{2}(x^2 + y^2)
+    \end{pmatrix} \cos(\Omega t)
+    \label{eq:saddle_point}
+\end{equation}
+
+Finally we have the gradient field, given in \autoref{eq:gradient_field}. The gradient can be expressed as $B_2' = mg/\mu$ where $m$ is the mass of the levitated particle, $g$ the gravitational acceleration and $\mu$ the magnetic moment of the particle. The gradient field can be created using ...?
+\begin{equation}
+    \vec{B_2}(\vec{r}, t) = B_2' \begin{pmatrix}
+        -x / 2 \\
+        -y / 2 \\
+        z
+    \end{pmatrix}
+    \label{eq:gradient_field}
+\end{equation}
