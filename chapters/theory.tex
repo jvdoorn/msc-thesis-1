@@ -3,8 +3,10 @@
 
 \section{Magnetic levitation}
 \label{sec:magnetic_levitation}
-Obtaining and then maintaining stable magnetic levitation requires three fields: a static homogenous field to align the magnet ($\vec{B_0}$); an alternating field containing the saddle point ($\vec{B_1}$); and a gradient field to counter the gravitational offset ($\vec{B_2}$). This follows from simulations and our previous experience \cite{perdriat,mart,eli}.
+Obtaining and then maintaining stable magnetic levitation requires three fields: a static homogenous field to align the magnet ($\vec{B_0}$); an alternating field containing the saddle point ($\vec{B_1}$); and a gradient field to counter the gravitational offset ($\vec{B_2}$). This follows from simulations and our previous experience \cite{perdriat,mart,eli}. Combining this with the magnetic moment of the levitated particle $\vec{\mu}$ allows us to derive (up to second order) the magnetic potential. Averaging over the oscillation period gives allows us to derive the associated eigenfrequencies.
 
+\subsection{Fields}
+\label{subsec:fields}
 The homogeneous field is given in \autoref{eq:homogeneous_field}. It is oriented in the $z$-axis with magnitude $B_0$. Homogenous fields can (locally) be created using a Helmholtz coil.
 \begin{equation}
     \vec{B_0}(\vec{r}, t) = \vec{B_0} = B_0 \zhat
@@ -16,7 +18,7 @@ Rotating a saddle point sufficiently fast effectively creates a (local) minimum.
     \vec{B_1}(\vec{r}, t) = \frac{B_1''}{2} \begin{pmatrix}
         -xz \\
         +yz \\
-        z^2 - \frac{1}{2}(x^2 + y^2)
+        z^2 - \frac{1}{2}\left(x^2 + y^2\right)
     \end{pmatrix} \cos(\Omega t)
     \label{eq:saddle_point}
 \end{equation}
@@ -29,4 +31,33 @@ Finally we have the gradient field, given in \autoref{eq:gradient_field}. The gr
         z
     \end{pmatrix}
     \label{eq:gradient_field}
+\end{equation}
+
+\subsection{Magnetic potential}
+\label{subsec:magnetic_moment}
+Using the $zyz$ convention for the Euler angles ($\alpha$, $\beta$, $\gamma$) we can express the magnetic moment as in \autoref{eq:magnetic_moment}. In this equation $\tilde\beta = \beta - \pi/2$.
+\begin{equation}
+    \vec{\mu} = -\mu \begin{pmatrix}
+        -\cos(\alpha)\sin(\tilde\beta)\cos(\gamma) - \sin(\alpha)\sin(\gamma) \\
+        \cos(\alpha)\sin(\gamma) - \sin(\alpha)\sin(\tilde\beta)\cos(\gamma) \\
+        -\cos(\tilde\beta)\cos(\gamma)
+    \end{pmatrix}
+    \label{eq:magnetic_moment}
+\end{equation}
+
+By taking the inner product of the magnetic moment and the fields we can derive the magnetic potential. This is given in \autoref{eq:magnetic_potential}. The potential is a function of the position of the particle $\vec{r}$ and the orientation of the magnetic moment $\vec{\mu}$.
+\begin{equation}
+    E_\text{mag}(\vec{r}, \vec{\mu}) = \mu B_0 \left(\frac{\gamma^2}{2} + \frac{\tilde\beta^2}{2}\right) - \frac{\mu B_1''}{2} \left(z^2 - \frac{1}{2}\left(x^2 + y^2\right)\right)\cos(\Omega t)
+    \label{eq:magnetic_potential}
+\end{equation}
+
+\subsection{Eigenfrequencies}
+\label{subsec:eigenfrequencies}
+Starting from \autoref{eq:magnetic_potential} and averaging over the oscillation period we can derive the eigenfrequencies. They are given in \autoref{eq:eigenfrequencies}. In these equations $a$ is the radius of the levitated particle (such that $V \sim a^3$) and $\rho_m$ is the density of the particle. The eigenfrequencies associated with the orientation of the magnet depend on $B_0$, which intuitively makes sense since the orientation of the magnet is determined by the homogenous field. The eigenfrequencies associated with the position of the magnet depend on $B_1''$, which also makes sense since the alternating field is what restricts the movement of the particle.
+\begin{equation}
+    \begin{gathered}
+        \omega_\gamma = \omega_{\tilde\beta} = \sqrt{\frac{5}{2}\frac{B_0B_\text{sat}}{\mu_0 \rho_m a^2}} \\
+        \omega_z = 2\omega_x = 2\omega_y = \frac{1}{\sqrt{2}}\frac{B_1''B_\text{sat}}{\mu_0\rho_m\Omega}
+    \end{gathered}
+    \label{eq:eigenfrequencies}
 \end{equation}
