@@ -10,6 +10,7 @@
 \usepackage{siunitx}
 \sisetup{separate-uncertainty = true, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }, range-units = single, list-units = single, exponent-product=\cdot}
 \DeclareSIUnit\fluxquantum{\text{\ensuremath{\Phi_0}}}
+\DeclareSIUnit\rpm{\text{rpm}}
 
 % Setup bibliography (instead of relying on the way lion-msc does it using natbib).
 \usepackage[backend=biber, style=phys, biblabel=brackets]{biblatex}
@@ -54,3 +55,6 @@
 \newcommand{\xhat}{\vec{e_x}}
 \newcommand{\yhat}{\vec{e_y}}
 \newcommand{\zhat}{\vec{e_z}}
+
+% Used for the \abs command.
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
