@@ -1,7 +1,27 @@
 \chapter{Method}
 \label{chap:method}
 
-\subsection{Sample fabrication}
+\section{Sample fabrication}
+\label{sec:sample-fabrication}
 A \qty{9}{\mm} by \qty{5}{\mm} undoped \ce{Si} wafer of \qty{500}{\um} thick is used as a substrate. The substrate is spincoated at \qty{2000}{\rpm} with positive resist AR P 662.06 and baked at \qty{150}{\celsius} for \qty{3}{\min}. This step is then repeated in order to coat 2 layers in total. A lithography step is performed using the Raith 100 exposing the resist to \qty{400}{\micro\coulomb\per\square\cm}. The resist is developed using a 1:3 mixture of MIBK and isopropanol for \qty{45}{\s}, the development is stopped using isopropanol. The Z-407 sputtering machine deposits a \qty{5}{\nm} \ce{MoGe} sticking layer followed by a \qty{500}{\nm} \ce{Au} layer. The lift-off is performed in acetone.
 
-Inside of the inner loop of the coil, we mill a hole of roughly \qty{30}{\um} deep with a diameter of \qty{40}{\um} in the \ce{Si} substrate using a \ce{Ga} FIB. A similar hole is also made in a microscope coverslip. A \ce{NdFeB} particle of roughly \qty{30}{\um} is placed inside the \ce{Si} hole and the coverslip is placed on top of the \ce{Si} substrate. The holes are carefully aligned by moving the coverslip using a microneedle. The coverslip is then glued to the \ce{Si} substrate using an epoxy.
+Inside of the inner loop of the coil, we mill a hole of roughly \qty{30}{\um} deep with a diameter of \qty{40}{\um} in the \ce{Si} substrate using a \ce{Ga} FIB. A similar hole is also made in a microscope coverslip. Using a micromanipulator a \ce{NdFeB} particle of roughly \qty{30}{\um} is placed inside the \ce{Si} hole\footnote{The easiest way to do so is by sticking the particle to the bottom of the needle and then scraping the particle off on the sides of the \ce{Si} hole.} and the coverslip is placed on top of the \ce{Si} substrate. The holes are carefully aligned by moving the coverslip using a micromanipulator. The coverslip is then glued to the \ce{Si} substrate using an epoxy.
+
+A summary of the dimensions of the sample is shown in \autoref{tab:sample-dimensions}. For a schematic illustration of the sample see TODO.
+\begin{table}
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Parameter} & \textbf{Symbol} & \textbf{Value} \\
+        \midrule
+        Track thickness & $d$ & \qty{500}{\nm} \\
+        Track width & $w$ & ??? \\
+        Inner loop radius & $r_1$ & ??? \\
+        Outer loop radius & $r_2$ & ??? \\
+        \ce{Si}/Glass hole diameter & & \qty{40}{\um} \\
+        \ce{Si}/Glass hole depth & & \qty{30}{\um} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Dimensions of the sample.}
+    \label{tab:sample-dimensions}
+\end{table}
