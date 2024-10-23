@@ -33,3 +33,6 @@ The sample is mounted on a printed circuit board (PCB) with a thick (???) copper
 The PCB is then placed inbetween two Helmholtz coils with a diameter of \qty{???}{\um} and ??? windings. They Helmholtz coils provide the uniform magnetic field to align the sample and the gradient magnetic field to control the vertical position of the particle. A dc current on the order of \qty{1}{\ampere} is sent through the coils by two power supplies (Tenma ???).
 
 A microscope objective (???) with a $20\times$ magnification is used to provide a visual image of the sample. Additionally a laser (???) is coupled in. The reflection of the laser is then imaged on a photodiode (???). The photodiode is connected to a lock-in amplifier (???) allowing for the detection of the motion of the particle.
+
+\section{Simulations}
+There are two assumptions in the theory: infinitely thin tracks; and perfectly symmetric loops. Because of this the ideal current ratio will be different in practice. A simulation in COMSOL is used to guide our choice of the current ratio. The simulation models the \ce{Si} wafer, the \ce{Au} tracks and a air box surrounding them. The simulation is performed in 3D using a stationary dc-analysis.
