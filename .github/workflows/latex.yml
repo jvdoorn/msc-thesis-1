@@ -32,7 +32,7 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           root_file: thesis.tex
-          args: -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+          args: -lualatex
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
