@@ -7,7 +7,7 @@ Obtaining and then maintaining stable magnetic levitation requires three fields:
 
 \subsection{Fields}
 \label{subsec:fields}
-The homogeneous field is given in \autoref{eq:homogeneous_field}. It is oriented in the $z$-axis with magnitude $B_0$. Homogenous fields can (locally) be created using a Helmholtz coil.
+The homogeneous field is given in \autoref{eq:homogeneous_field}. It is oriented in the $z$-axis with magnitude $B_0$. Homogenous fields can (locally) be created using Helmholtz coils.
 \begin{equation}
     \vec{B_0}(\vec{r}, t) = \vec{B_0} = B_0 \zhat
     \label{eq:homogeneous_field}
@@ -23,7 +23,7 @@ Rotating a saddle point sufficiently fast effectively creates a (local) minimum.
     \label{eq:saddle_point}
 \end{equation}
 
-Finally we have the gradient field, given in \autoref{eq:gradient_field}. The gradient can be expressed as $B_2' = mg/\mu$ where $m$ is the mass of the levitated particle, $g$ the gravitational acceleration and $\mu$ the magnetic moment of the particle. The gradient field can be created using ...?
+Finally we have the gradient field, given in \autoref{eq:gradient_field}. The required gradient can be expressed as $B_2' = mg/\mu$ where $m$ is the mass of the levitated particle, $g$ the gravitational acceleration and $\mu$ the magnetic moment of the particle. The gradient serves to offset the effect of gravity. As such the gradient is oriented in the $z$-axis. The gradient field can be created by using a larger current in one of the Helmholtz coils.
 \begin{equation}
     \vec{B_2}(\vec{r}, t) = B_2' \begin{pmatrix}
         -x / 2 \\
@@ -57,13 +57,15 @@ Starting from \autoref{eq:magnetic_potential} and averaging over the oscillation
 \begin{equation}
     \begin{gathered}
         \omega_\gamma = \omega_{\tilde\beta} = \sqrt{\frac{5}{2}\frac{B_0B_\text{sat}}{\mu_0 \rho_m a^2}} \\
-        \omega_z = 2\omega_x = 2\omega_y = \frac{1}{\sqrt{2}}\frac{B_1''B_\text{sat}}{\mu_0\rho_m\Omega}
+        \omega_z = 2\omega_x = 2\omega_y = \frac{\Omega \abs{q_z}}{2\sqrt{2}} = \frac{1}{\sqrt{2}}\frac{B_1''B_\text{sat}}{\mu_0\rho_m\Omega}
     \end{gathered}
     \label{eq:eigenfrequencies}
 \end{equation}
 
-The time average is valid if $q_{x,y,z}$, as defined in equation \ref{eq:q-factors}, are less than or equal to $0.4$.
+The time average is valid if $\abs{q_z}$, as defined in equation \ref{eq:q-factors}, is less than or equal to $0.4$.
 \begin{equation}
     q_z = -2q_x = -2q_y = \frac{2}{\Omega^2}\frac{B_1''B_{\text{sat}}}{\mu_0\rho_m}
     \label{eq:q-factors}
 \end{equation}
+
+TODO: $\omega_\alpha$?
