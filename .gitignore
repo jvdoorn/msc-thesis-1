@@ -305,3 +305,6 @@ TSWLatexianTemp*
 
 # Ignore main output file.
 thesis.pdf
+
+# Ignore any SAVE-ERROR files
+*-SAVE-ERROR

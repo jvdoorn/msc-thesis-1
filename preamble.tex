@@ -8,8 +8,11 @@
 
 % Use siunitx to write out units and quantities, use special formatting for the units.
 \usepackage{siunitx}
-\sisetup{separate-uncertainty = true, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }, range-units = single, list-units = single, exponent-product=\cdot}
+\sisetup{separate-uncertainty = true, round-mode = uncertainty, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }, range-units = single, list-units = single, exponent-product=\cdot}
+\robustify{\dots}
+\sisetup{input-digits = 0123456789\dots?}
 \DeclareSIUnit\fluxquantum{\text{\ensuremath{\Phi_0}}}
+\DeclareSIUnit\rpm{\text{rpm}}
 
 % Setup bibliography (instead of relying on the way lion-msc does it using natbib).
 \usepackage[backend=biber, style=phys, biblabel=brackets]{biblatex}
@@ -44,3 +47,21 @@
 
 % Use whitespace instead of indent for new paragraphs.
 \usepackage[parfill]{parskip}
+
+% Used for properly typesetting bold symbols in math mode.
+\usepackage{bm}
+
+% Redefine \vec to use bold font instead of an arrow.
+\renewcommand{\vec}[1]{\bm{#1}}
+% Additionally define shorthands for the unit vectors in the x, y and z directions.
+\newcommand{\xhat}{\vec{e_x}}
+\newcommand{\yhat}{\vec{e_y}}
+\newcommand{\zhat}{\vec{e_z}}
+
+% Used for the \abs command.
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+
+% Used in plots to clarify the x-, y- and z-directions.
+\definecolor{x_axis_color}{HTML}{EE6677}
+\definecolor{y_axis_color}{HTML}{228833}
+\definecolor{z_axis_color}{HTML}{4477AA}

@@ -67,7 +67,7 @@
 \DeclareOption{double}{}	% When [double] is specified do nothing
 \DeclareOption{single}{	% This option creates the final version
     \typeout{single linespacing}
-    \def\mystretch{1}}	
+    \def\mystretch{1}}
 
 % Note that the linespacing is set after the \Loadclass command!
 % == ** continued after \Loadclass
@@ -381,7 +381,7 @@
 %\renewcommand{\sectionmark}[1]{}
 
 \fancyhf{}
-\fancyfoot[CE,CO]{\vskip 5mm \scriptsize{\color{mygrey}Version of \@date -- Created \today~-~\currenttime}}
+\fancyfoot[CE,CO]{\vskip 5mm \scriptsize{\color{mygrey}\input{version} -- Created \today~-~\currenttime}}
 \fancyfoot[RO,LE]{\thepage}
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[LO]{\rightmark}

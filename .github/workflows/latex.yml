@@ -10,17 +10,12 @@ jobs:
   compile:
     runs-on: ubuntu-latest
     permissions: write-all
-    
+
     steps:
       - name: Fetch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Compile
-        uses: dante-ev/latex-action@latest
-        with:
-          root_file: thesis.tex
-          args: -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
       - name: Versioning
         uses: anothrNick/github-tag-action@master
         id: version
@@ -29,7 +24,15 @@ jobs:
           WITH_V: true
           RELEASE_BRANCHES: main
           DEFAULT_BUMP: ${{ github.ref == 'refs/heads/main' && 'minor' || 'patch' }}
-          DRY_RUN: true  # We want to manually create the release.
+          DRY_RUN: true # We want to manually create the release.
+      - run: |
+          echo "${{ steps.version.outputs.new_tag }}" > version
+          cat version
+      - name: Compile
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: thesis.tex
+          args: -lualatex
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
