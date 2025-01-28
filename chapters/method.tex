@@ -43,6 +43,15 @@ A summary of the dimensions of the sample is shown in \autoref{tab:sample-dimens
     \label{fig:sample-dimensions}
 \end{figure}
 
+\begin{SCfigure}
+    \centering
+    \includegraphics{figures/data/current_through_tracks.pdf}
+    \caption{The distribution of current through the tracks. Blue (red) areas indicate a low (high) current density. The simulation was done in COMSOL using a stationary dc-analysis. The current ratio is $\xi = 2$.}
+    \label{fig:current-distribution}
+\end{SCfigure}
+
+An important design consideration is the distribution of current through the tracks. Simulations in COMSOL show that the current is concentrated in the inside bends. In our case this is beneficial and allows us to get close to the $\xi = 2$ ratio. The current distribution is shown in \autoref{fig:current-distribution}. The extremely high and low currents in the sharp bends are an artefact of the simulation and are not physical.
+
 \section{Experimental setup}
 The sample is mounted on a printed circuit board (PCB) with a thick (\qty{1}{\mm}) copper baseplate. The top of the sample is exactly flush with the top of the PCB. Additionally the pads for the wirebonds on the sample and the PCB are aligned and directly next to each other. This allows for very short wirebonds to be used. This significantly reduces the resistance of the wirebonds and thus the maximum current that can be applied to the sample. The wirebonds are made of \qty{25}{\um} thick \ce{Pt}.
 
@@ -65,9 +74,17 @@ Gas damping on levitated micrometer sized particles has been studied by \citeaut
     \label{eqn:gas-damping-rate}
 \end{equation}
 
-$K_n$ is the Knudsen number defined as $K_n = \bar{l}/a$, $\bar{l}$ the mean free path of air molecules, $\mu_v$ the gas viscosity, $a$ the diameter of the particle, $m$ the mass of the particle and the constant $c_K = 0.31 K_n / \left(0.785 + 1.152 K_n + K_n^2 \right)$.
+$K_n$ is the Knudsen number defined as $K_n = \bar{l}/a$, $\bar{l}$ the mean free path of air molecules, $\mu_v$ the gas viscosity, $a$ the diameter of the particle, $m$ the mass of the particle and the constant $c_K = 0.31 K_n / \left(0.785 + 1.152 K_n + K_n^2 \right)$. A calculation for the gas damping is shown in \autoref{fig:gas-damping}.
+
+\begin{SCfigure}
+    \centering
+    \includegraphics{figures/data/gas_damping.pdf}
+    \caption{The gas damping predicted for our particle. The damping rate is calculated using \autoref{eqn:gas-damping-rate}. The calculations have been performed for $T=\qty{300}{\kelvin}$.}
+    \label{fig:gas-damping}
+\end{SCfigure}
 
 \subsubsection{Inductive damping}
-
+TODO
 
 \subsubsection{Eddy current damping}
+TODO
