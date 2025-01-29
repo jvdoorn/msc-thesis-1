@@ -1,0 +1,50 @@
+\chapter{Definition and conversion of Q-factors}
+\label{app:q_factors}
+
+In this appendix we consider a damped and driven harmonic oscillator described by the following equation of motion:
+\begin{equation}
+    \ddot{x} + \gamma \dot{x} + \omega_0^2 x = D(t)
+\end{equation}
+where $x$ is some amplitude in \unit{\meter}, $\gamma$ is the damping rate in \unit{\per\second}, $\omega_0 = 2\pi f_0$ is the resonance frequency in \unit{\radian\per\second} and $D(t)$ is the driving force. The Q-factor is a measure for the width (and height) of the resonance peak.
+
+There are two common definitions of the Q-factor. The first is the \textit{bandwidth} definition, where the Q-factor is given by the ratio between the resonance frequency and the bandwidth of the resonance.
+\begin{equation}
+    Q_\text{B} = \frac{f_0}{\Delta f} = \frac{\omega_0}{\Delta \omega}
+\end{equation}
+Given a resonance peak in a spectrum, the bandwidth is defined as the width of the peak at half the maximum amplitude (FWHM). The FWHM should be determined by fitting a Lorentzian (Cauchy distribution) to the peak in the power spectrum.
+\begin{equation}
+    \mathcal{L}(f) \propto \frac{\Gamma}{(f - f_0)^2 + \Gamma^2}
+\end{equation}
+In this case $\Gamma$ is the scale of the peak and the FWHM is given by $2\Gamma$. Additionally the FWHM is equal to the damping rate $\gamma$. When looking at a peak in a `normal' Fourier spectrum, meaning you look at the amplitude of the signal, the magnitude of the peak is instead described by:
+\begin{equation}
+    A(f) \propto \sqrt{\frac{1}{(f - f_0)^2 + \gamma^2f^2}}
+\end{equation}
+The FWHM in this case is given by $\sqrt{2}\gamma$. This means that the Q-factor of a `normal' Fourier spectrum deviates from the Q-factor of a power spectrum by a factor of $\sqrt{2}$! Since it is most common to look at the power spectrum, we will use the power spectrum definition of the Q-factor.
+
+Another way of defining the Q-factor is the \textit{energy} definition. The Q-factor is then given by the ratio between the energy stored in the oscillator and the energy dissipation.
+\begin{equation}
+    Q_\text{E} = 2 \pi \frac{\text{stored energy}}{\text{dissipated energy per cycle}}
+\end{equation}
+Or equivalently:
+\begin{equation}
+    Q_\text{E} = 2 \pi f_0 \frac{\text{stored energy}}{\text{dissipation}}
+\end{equation}
+The energy of a damped harmonic oscillator decays exponentially with time where the decay time is given by $1/\gamma$. Thus the Q-factor in terms of $\gamma$ is given by:
+\begin{equation}
+    Q_\text{E} = 2 \pi f_0 \frac{E(t)}{\tau E(t)} = 2 \pi f_0 \tau_\text{energy} = \frac{2\pi f_0}{\gamma}
+\end{equation}
+Since we often observe a decaying amplitude in the time domain, to convert this decay time to the energy domain we can use $\tau_\text{energy} = \frac{1}{2} \tau_\text{amplitude}$. To convert between any Q-factor we assert that they must result in the same damping rate $\gamma$. As this is the physical quantity that underlies the system. As a reference we summarize the conversion factors in the table below.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Observation} & $\bm{Q_B}$ & $\bm{Q_E}$ \\
+        \midrule
+        FWHM in PSD ($\Delta f$) & $\frac{f_0}{\Delta f}$ & $2\pi \frac{f_0}{\Delta f}$ \\
+        FWHM in FFT ($\Delta f$) & $\sqrt{2} \frac{f_0}{\Delta f}$ & $2\pi \sqrt{2} \frac{f_0}{\Delta f}$ \\
+        Decay in energy ($\tau_\text{energy}$) & $f_0 \tau_\text{energy}$ & $2 \pi f_0 \tau_\text{energy}$ \\
+        Decay in amplitude ($\tau_\text{amplitude}$) & $\frac{1}{2} f_0 \tau_\text{amplitude}$ & $\pi f_0 \tau_\text{amplitude}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
