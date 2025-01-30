@@ -15,10 +15,10 @@ There are two common definitions of the Q-factor. The first is the \textit{bandw
     \tag{bandwidth definition}
 \end{equation}
 where $\Delta \omega$ is the full width at half maximum (FWHM) of the resonance peak. The second definition is the \textit{energy} definition, where the Q-factor is given by the ratio between the energy stored in the oscillator and the energy dissipation (per cycle):
-\begin{equation}
-    Q_\text{E} = \frac{\text{stored energy}}{\text{dissipated energy per cycle}} = f_0 \frac{\text{stored energy}}{\text{dissipation}}
-    \tag{energy definition}
-\end{equation}
+\begin{align}
+    Q_\text{E} &= 2\pi \frac{\text{stored energy}}{\text{dissipated energy per cycle}} \nonumber \\
+               &= 2\pi f_0 \frac{\text{stored energy}}{\text{dissipation}} = \omega_0 \frac{\text{stored energy}}{\text{dissipation}} \tag{energy definition}
+\end{align}
 
 \section{FWHM}
 The first method of determining the Q-factor is by looking at the FWHM of the resonance peak. There are two ways of doing so, either by looking at the FWHM in the power spectrum or the FWHM in the Fourier spectrum.
@@ -26,27 +26,29 @@ The first method of determining the Q-factor is by looking at the FWHM of the re
 \subsection{Power spectrum}
 In the power spectrum (PSD), the peak is described by a Lorentzian distribution:
 \begin{equation}
-    \mathcal{L}(f) \propto \frac{\frac{1}{2} \Gamma}{(f - f_0)^2 + \left(\frac{1}{2} \Gamma\right)^2} %\quad \text{or} \quad \mathcal{L}(\omega) \propto \frac{\frac{1}{2} \Gamma}{(\omega - \omega_0)^2 + \left(\frac{1}{2} \Gamma\right)^2}
+    \mathcal{L}(f) \propto \frac{\frac{1}{2} \Gamma}{(\omega - \omega_0)^2 + \left(\frac{1}{2} \Gamma\right)^2}
 \end{equation}
 where $\Gamma$ is the FWHM of the peak. Coincidentally, the FWHM is equal to the damping rate $\gamma$. The Q-factor in terms of the FWHM in the power spectrum is then given by:
 \begin{equation}
-    Q_\text{B} = \frac{f_0}{\Gamma} = \frac{f_0}{\gamma}
+    Q_\text{B} = \frac{\omega_0}{\Gamma} = \frac{\omega_0}{\gamma}
 \end{equation}
-There is however a caveat. When looking at a peak in a `normal' Fourier spectrum, meaning you look at the amplitude of the signal, the magnitude of the peak is instead described by (this can be found in most textbooks on classical mechanics, such as Chapter~3.6 in \citeauthor{fowles_analytical_2005}):
+
+\subsection{Fourier spectrum}
+There is a caveat however. When looking at a peak in a `normal' Fourier spectrum, meaning you look at the amplitude of the signal, the magnitude of the peak is instead described by (this can be found in most textbooks on classical mechanics, such as Chapter~3.6 in \citeauthor{fowles_analytical_2005}):
 \begin{equation}
-    A(f) \propto \sqrt{\frac{1}{(f^2 - f_0^2)^2 + \gamma^2f^2}}
+    A(f) \propto \sqrt{\frac{1}{(\omega^2 - \omega_0^2)^2 + \gamma^2\omega^2}}
 \end{equation}
-The FWHM in this case is approximated by $\sqrt{2}\gamma$. This means that the Q-factor of a `normal' Fourier spectrum deviates from the Q-factor of a power spectrum by a factor of $\sqrt{2}$! Since it is most common to look at the power spectrum, we will use the power spectrum definition of the Q-factor.
+The FWHM in this case is approximated by $\sqrt{2}\gamma$. This means that the Q-factor of a `normal' Fourier spectrum deviates from the Q-factor of a power spectrum by a factor of $\sqrt{2}$! Since the energy of a system is more fundamental than the amplitude, we choose to convert the FWHM of the Fourier spectrum to the FWHM of the power spectrum.
 
 \section{Decay time}
-Another simple way of measuring the Q-factor of a resonator is by looking at the decay time of the signal. There are two ways of doing so, either by looking at the decay in amplitude or the decay in energy. They are related to $\gamma$ as $\gamma = 1 / \tau_\text{energy} = 2 / \tau_\text{amplitude}$. To derive an expression for the Q-factor in terms of the decay time, we use that the energy dissipation is given by $\dot{E} = -\tau_\text{energy}E$. Substituting this into the energy definition of the Q-factor gives:
+Another way of measuring the Q-factor of a resonator is by looking at the decay time of the signal. There are two ways of doing so, either by looking at the decay in amplitude or the decay in energy. They are related to $\gamma$ as $\gamma = 1 / \tau_\text{energy} = 2 / \tau_\text{amplitude}$. Where after a time $\tau_\text{energy}$ ($\tau_\text{energy}$) the energy (amplitude) has decreased by a factor $1/e$. To derive an expression for the Q-factor in terms of the decay time, we use that the energy dissipation is given by $\dot{E} = -\frac{1}{\tau_\text{energy}}E$. Substituting this into the energy definition of the Q-factor gives:
 \begin{equation}
-    Q_\text{E} = f_0 \frac{E(t)}{\tau_\text{energy} E(t)} = f_0 \tau_\text{energy} = \frac{1}{2} f_0 \tau_\text{amplitude} = \frac{f_0}{\gamma}
+    Q_\text{E} = \omega_0 \frac{E(t)}{\frac{1}{\tau_\text{energy}} E(t)} = \omega_0 \tau_\text{energy} = \frac{1}{2} \omega_0 \tau_\text{amplitude} = \frac{\omega_0}{\gamma}
 \end{equation}
-This also means that the value of $Q_\text{B}$ is the same as the value of $Q_\text{E}$!
+We now see that the definition of the Q-factor in terms of the decay time is equivalent to the definition in terms of the FWHM in the power spectrum.
 
 \section{Summary}
-In summary, calculating a Q-factor can be done in three ways: by looking at the decay time, the FWHM in the power spectrum or the FWHM in the Fourier spectrum. The table below serves as a tool to convert between the different definitions of the Q-factor by using $Q = \frac{f_0}{\gamma}$.
+In summary, calculating a Q-factor can be done in four ways: by looking at the decay time of the energy, the decay time of the amplitude, the FWHM in the power spectrum or the FWHM in the Fourier spectrum. The table below provides a overview on how to calculate the Q-factor based on your observations.
 
 \begin{table}[h]
     \centering
@@ -54,10 +56,10 @@ In summary, calculating a Q-factor can be done in three ways: by looking at the 
         \toprule
         \textbf{Observation} & $\bm{\gamma}$ & $\bm{Q}$ \\
         \midrule
-        FWHM in power spectrum ($\Delta f = \Gamma$) & $\Delta f$ & $f_0 / \Delta f$ \\
-        FWHM in Fourier spectrum ($\Delta f$) & $\Delta f / \sqrt{2}$ & $\sqrt{2} f_0 / \Delta f$ \\
-        Energy decay ($\tau_\text{energy}$) & $1 / \tau_\text{energy}$ & $f_0 \tau_\text{energy}$ \\
-        Amplitude decay ($\tau_\text{amplitude}$) & $2 / \tau_\text{amplitude}$ & $f_0 \tau_\text{amplitude}$ \\
+        FWHM in PSD ($\Delta \omega$ or $\Delta f$) & $\Delta \omega$ & $\omega_0 / \Delta \omega = f_0 / \Delta f$ \\
+        FWHM in FS ($\Delta \omega$ or $\Delta f$) & $\Delta \omega / \sqrt{2}$ & $\sqrt{2} \omega_0 / \Delta \omega = \sqrt{2} f_0 / \Delta f$ \\
+        Energy decay ($\tau_\text{energy}$) & $1 / \tau_\text{energy}$ & $\omega_0 \tau_\text{energy} = 2\pi f_0 \tau_\text{energy}$ \\
+        Amplitude decay ($\tau_\text{amplitude}$) & $2 / \tau_\text{amplitude}$ & $\frac{1}{2} \omega_0 \tau_\text{energy} = \pi f_0 \tau_\text{amplitude}$ \\
         \bottomrule
     \end{tabular}
 \end{table}
