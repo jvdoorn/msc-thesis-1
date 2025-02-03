@@ -13,6 +13,7 @@
 \sisetup{input-digits = 0123456789\dots?}
 \DeclareSIUnit\fluxquantum{\text{\ensuremath{\Phi_0}}}
 \DeclareSIUnit\rpm{\text{rpm}}
+\DeclareSIUnit\fps{\text{fps}}
 
 % Setup bibliography (instead of relying on the way lion-msc does it using natbib).
 \usepackage[backend=biber, style=phys, biblabel=brackets]{biblatex}
@@ -32,6 +33,9 @@
 % Nicer tables.
 \usepackage{booktabs}
 \usepackage{tabularx}
+
+% Easier to use lists.
+\usepackage{enumitem}
 
 % Used for including PGF files. Use the external package to avoid memory issues and increase compilation speed.
 \usepackage{import}
