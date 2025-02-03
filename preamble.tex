@@ -13,6 +13,7 @@
 \sisetup{input-digits = 0123456789\dots?}
 \DeclareSIUnit\fluxquantum{\text{\ensuremath{\Phi_0}}}
 \DeclareSIUnit\rpm{\text{rpm}}
+\DeclareSIUnit\fps{\text{fps}}
 
 % Setup bibliography (instead of relying on the way lion-msc does it using natbib).
 \usepackage[backend=biber, style=phys, biblabel=brackets]{biblatex}
@@ -31,6 +32,10 @@
 
 % Nicer tables.
 \usepackage{booktabs}
+\usepackage{tabularx}
+
+% Easier to use lists.
+\usepackage{enumitem}
 
 % Used for including PGF files. Use the external package to avoid memory issues and increase compilation speed.
 \usepackage{import}
@@ -40,7 +45,10 @@
 \tikzexternalize
 
 % Used for subfigures/captions.
-\usepackage{subcaption}
+\usepackage{subcaption, sidecap}
+% Align the caption of figures at the baseline and tables at the top.
+\sidecaptionvpos{figure}{c}
+\sidecaptionvpos{table}{t}
 
 % Used for debugging such as printing the value of \textwidth (\printinunitsof{in}\prntlen{\textwidth})
 \usepackage{layouts}
@@ -65,3 +73,6 @@
 \definecolor{x_axis_color}{HTML}{EE6677}
 \definecolor{y_axis_color}{HTML}{228833}
 \definecolor{z_axis_color}{HTML}{4477AA}
+\def\xmode{\textcolor{x_axis_color}{x}-mode}
+\def\ymode{\textcolor{y_axis_color}{y}-mode}
+\def\zmode{\textcolor{z_axis_color}{z}-mode}
