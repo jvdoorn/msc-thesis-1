@@ -39,7 +39,7 @@ A summary of the dimensions of the sample is shown in \autoref{tab:sample-dimens
         \centering
         \includegraphics{figures/sample/trap_geometry.pdf}
     \end{subfigure}%
-    \caption{An optical microscope image of the sample (\textbf{left}) and a schematic of the sample geometry (\textbf{right}). A couple features can be seen in the image 1) in the bottom left is a discoloration due to the epoxy 2) the dark streak in the bottom right is the edge of the cover glass 3) the dark discoloration is the \ce{Pt} layer of the glass. In the center of the trap you can clearly see the \ce{NdFeB} particle. Furthermore, you can see that their is a small misalignment between the hole in the \ce{Si} and hole in the cover glass. A definition of the symbols in the schemtic and their numerical value can be found in \autoref{tab:sample-dimensions}.}
+    \caption{An optical microscope image of the sample (\textbf{left}). A couple features can be seen in the image 1) in the bottom left is a discoloration due to the epoxy 2) the dark streak in the bottom right is the edge of the cover glass 3) the dark discoloration is the \ce{Pt} layer of the glass. In the center of the trap you can clearly see the \ce{NdFeB} particle. Furthermore, you can see that their is a small misalignment between the hole in the \ce{Si} and hole in the cover glass. On the \textbf{right} you see a schematic of the sample. A definition of the symbols and their numerical value can be found in \autoref{tab:sample-dimensions}.}
     \label{fig:sample-dimensions}
 \end{figure}
 
@@ -60,13 +60,14 @@ The PCB is then placed inbetween two Helmholtz coils with a diameter of \qty{30}
 A microscope objective with a $10\times$ magnification and large working distance is used to provide a visual image of the sample. Additionally a laser (\qty{635}{\nm}, \qty{1}{\milli\watt}) is coupled in. The reflection of the laser is then imaged on a photodiode (ThorLabs PDA36A2). The photodiode is connected to a lock-in amplifier (Zurich Instruments MFLI) allowing for the detection of the motion of the particle. In addition to the photodiode, we can use the camera feed to analyse the motion of the particle. This is done using Python and OpenCV using the CSRT tracker. This tracker is quite robust at the cost of being computationally expensive. As such it cannot be used in real-time.
 
 \section{Simulations}
-There are two assumptions in the theory: infinitely thin tracks; and perfectly symmetric loops. Because of this the ideal current ratio will be different in practice. A simulation in COMSOL is used to guide our choice of the current ratio. The simulation models the \ce{Si} wafer, the \ce{Au} tracks and a air box surrounding them. The simulation is performed in 3D using a stationary dc-analysis.
+There are two assumptions in the theory: infinitely thin tracks; and perfectly symmetric loops. Because of this the ideal current ratio will be different in practice. A simulation in COMSOL is used to guide our choice of the current ratio. The simulation is performed in 3D using a stationary dc-analysis.
 
 \subsection{Q-factor}
 \label{subsec:q-factor}
 In addition to this we estimate our effective Q-factor. A finite Q-factor is caused by damping. Below we discuss several sources of damping.
 
 \subsubsection{Gas damping}
+\label{subsubsec:gas-damping}
 Gas damping on levitated micrometer sized particles has been studied by \citeauthor{millen}. For pressures above \qty{1E-6}{\milli\bar} and $K_n \ll 1$ stachastic forces dominate the damping rate. The damping rate in this case is given by \autoref{eqn:gas-damping-rate}.
 
 \begin{equation}
@@ -84,7 +85,11 @@ $K_n$ is the Knudsen number defined as $K_n = \bar{l}/a$, $\bar{l}$ the mean fre
 \end{SCfigure}
 
 \subsubsection{Inductive damping}
-TODO
+\label{subsubsec:inductive-damping}
+The enclosed flux in the loops will change as the particle moves. A changing flux induces a current in the loops which is a dissipative process. Using COMSOL we make an estimate of the dissipation by calculating the induced current in the loops.
+
+TODO: we still need to do this simulation, but I think it will be very similar to the Eddy current damping? Need to check what COMSOL does exactly.
 
 \subsubsection{Eddy current damping}
-TODO
+\label{subsubsec:eddy-current-damping}
+Eddy currents are small `whirlpools' of current that are induced by a changing magnetic field. Due to the resistance of the conductor this will lead to dissipation of energy. We consider the case that the moving particle creates a changinging magnetic field which induces the Eddy currents in either the tracks or the residual \ce{Ga} around the trap due to the FIB milling. To estimate the dissipation we perform a simulation in COMSOL where we use the estimated maximum velocity of the particle to include a Lorentz transformation in the magnetic field. The simulation is done in 3D using a stationary dc-analysis.

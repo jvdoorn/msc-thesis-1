@@ -1,5 +1,6 @@
 \chapter{Theory}
 \label{chap:theory}
+Earnshaw's theorem implies that it is impossible to achieve stable levitation using static fields alone. This is because the effective potential is always a saddle point. A dynamic field however can, averaged over time, create a local minimum. A magnetic Paul trap is a trap uses magnetic fields to achieve this\cite{perdriat}.
 
 \section{Magnetic levitation}
 \label{sec:magnetic_levitation}
@@ -35,7 +36,7 @@ Finally we have the gradient field, given in \autoref{eq:gradient_field}. The re
 
 \subsection{Magnetic potential}
 \label{subsec:magnetic_moment}
-Using the $zyz$ convention for the Euler angles ($\alpha$, $\beta$, $\gamma$) we can express the magnetic moment as in \autoref{eq:magnetic_moment}. In this equation $\tilde\beta = \beta - \pi/2$.
+Using the $zyz$ convention for the Euler angles $\alpha$, $\beta$, $\gamma$) we can express the magnetic moment as in \autoref{eq:magnetic_moment}. In this equation $\tilde\beta = \beta - \pi/2$.
 \begin{equation}
     \vec{\mu} = -\mu \begin{pmatrix}
         -\cos(\alpha)\sin(\tilde\beta)\cos(\gamma) - \sin(\alpha)\sin(\gamma) \\
@@ -56,16 +57,20 @@ By taking the inner product of the magnetic moment and the fields we can derive 
 Starting from \autoref{eq:magnetic_potential} and averaging over the oscillation period we can derive the eigenfrequencies. They are given in \autoref{eq:eigenfrequencies}. In these equations $a$ is the radius of the levitated particle (such that $V \sim a^3$) and $\rho_m$ is the density of the particle. The eigenfrequencies associated with the orientation of the magnet depend on $B_0$, which intuitively makes sense since the orientation of the magnet is determined by the homogenous field. The eigenfrequencies associated with the position of the magnet depend on $B_1''$, which also makes sense since the alternating field is what restricts the movement of the particle.
 \begin{equation}
     \begin{gathered}
-        \omega_\gamma = \omega_{\tilde\beta} = \sqrt{\frac{5}{2}\frac{B_0B_\text{sat}}{\mu_0 \rho_m a^2}} \\
+        \omega_\gamma = \omega_{\beta} = \sqrt{\frac{5}{2}\frac{B_0B_\text{sat}}{\mu_0 \rho_m a^2}} \\
         \omega_z = 2\omega_x = 2\omega_y = \frac{\Omega \abs{q_z}}{2\sqrt{2}} = \frac{1}{\sqrt{2}}\frac{B_1''B_\text{sat}}{\mu_0\rho_m\Omega}
     \end{gathered}
     \label{eq:eigenfrequencies}
 \end{equation}
 
-The time average is valid if $\abs{q_z}$, as defined in equation \ref{eq:q-factors}, is less than or equal to $0.4$.
+The time average is valid if $\abs{q_z}$, as defined in equation \ref{eq:frequency-constraint}, is less than or equal to $0.4$.
 \begin{equation}
     q_z = -2q_x = -2q_y = \frac{2}{\Omega^2}\frac{B_1''B_{\text{sat}}}{\mu_0\rho_m}
-    \label{eq:q-factors}
+    \label{eq:frequency-constraint}
 \end{equation}
 
-TODO: $\omega_\alpha$?
+Rotation around the $z$-axis (the angle $\alpha$) is not restricted by any magnetic field. This is because of the spherical symmetry in the system around the $z$-axis. If we assume that the particle is in thermal equilibrium then we can estimate the angular frequency:
+\begin{equation}
+    I\omega_\alpha^2 \approx k_B T \Rightarrow \omega_\alpha \approx \sqrt{\frac{k_B T}{I}} = \sqrt{\frac{15 k_B T}{8 \pi \rho_m a^5}}
+\end{equation}
+In this equation $I$ is the moment of inertia of the particle. The moment of inertia of a sphere is given by $I = 2/5 m a^2$. Due to the spherical symmetry of the particle this mode is very hard to detect.
