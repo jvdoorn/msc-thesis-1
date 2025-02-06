@@ -26,6 +26,8 @@
 \usepackage{esint}
 % Diameter symbol.
 \usepackage{wasysym}
+% Braket notation.
+\usepackage{braket}
 
 % For chemical formulas.
 \usepackage[version=4]{mhchem}
@@ -37,15 +39,8 @@
 % Easier to use lists.
 \usepackage{enumitem}
 
-% Used for including PGF files. Use the external package to avoid memory issues and increase compilation speed.
-\usepackage{import}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepgfplotslibrary{external}
-\tikzexternalize
-
 % Used for subfigures/captions.
-\usepackage{subcaption, sidecap}
+\usepackage{subcaption, sidecap,floatrow}
 % Align the caption of figures at the baseline and tables at the top.
 \sidecaptionvpos{figure}{c}
 \sidecaptionvpos{table}{t}
@@ -58,6 +53,8 @@
 
 % Used for properly typesetting bold symbols in math mode.
 \usepackage{bm}
+% Easier to work with spaces after commands.
+\usepackage{xspace}
 
 % Redefine \vec to use bold font instead of an arrow.
 \renewcommand{\vec}[1]{\bm{#1}}
@@ -73,6 +70,6 @@
 \definecolor{x_axis_color}{HTML}{EE6677}
 \definecolor{y_axis_color}{HTML}{228833}
 \definecolor{z_axis_color}{HTML}{4477AA}
-\def\xmode{\textcolor{x_axis_color}{x}-mode}
-\def\ymode{\textcolor{y_axis_color}{y}-mode}
-\def\zmode{\textcolor{z_axis_color}{z}-mode}
+\def\xmode{\textcolor{x_axis_color}{x}-mode\xspace}
+\def\ymode{\textcolor{y_axis_color}{y}-mode\xspace}
+\def\zmode{\textcolor{z_axis_color}{z}-mode\xspace}

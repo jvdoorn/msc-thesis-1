@@ -83,10 +83,9 @@ In this equation $I$ is the moment of inertia of the object. The moment of inert
 
 In short, the eigenfrequencies are determined by the magnetic fields and the size of the object. The orientation of the magnetic moment and the associated librational eigenfrequencies are determined by the homogenous field. The position of the object and the associated vibrational eigenfrequencies are determined by the dynamic field. The rotation around the $z$-axis of the object is not restricted by any magnetic field.
 
-
 \section{Damping}
 \label{sec:damping}
-Most physical systems are damped (dissipative). In the case of a magnetic Paul trap we mostly consider three sources of damping: gas damping, inductive damping and eddy current damping. They are discussed in the remainder of this section. For an excellent review of relevant damping mechanisms see \citeauthor{millen}. The resonance peak of a damped harmonic oscillator has a finite width and height related to the quality factor $Q$. The quality factor is defined as the ratio of the energy stored in the system to the energy dissipated per cycle. We define the Q-factor as follows:
+Most physical systems are damped (dissipative). In the case of a magnetic Paul trap we mostly consider three sources of damping: gas damping, inductive damping and eddy current damping. They are discussed in the remainder of this section. For an excellent review of relevant damping mechanisms see \textcite{millen}. The resonance peak of a damped harmonic oscillator has a finite width and height related to the quality factor $Q$. The quality factor is defined as the ratio of the energy stored in the system to the energy dissipated per cycle. We define the Q-factor as follows:
 \begin{equation*}
     Q = \omega_0 \frac{\text{energy stored}}{\text{dissipation}} = \frac{\omega_0}{\gamma}
 \end{equation*}
@@ -94,7 +93,7 @@ where $\omega_0$ is the resonance frequency and $\gamma$ the damping rate. More 
 
 \subsubsection{Gas damping}
 \label{subsubsec:gas-damping}
-Gas damping on levitated micrometer sized particles has been studied by \citeauthor{millen}. For pressures above \qty{1E-6}{\milli\bar} and $K_n \ll 1$ stachastic forces dominate the damping rate. The damping rate in this case is given by \autoref{eqn:gas-damping-rate}.
+Gas damping on levitated micrometer sized particles has been studied by \textcite{millen}. For pressures above \qty{1E-6}{\milli\bar} and $K_n \ll 1$ stachastic forces dominate the damping rate. The damping rate in this case is given by \autoref{eqn:gas-damping-rate}.
 
 \begin{equation}
     \frac{\gamma_{\text {gas}}}{2 \pi}=3 \mu_v \frac{a}{m} \frac{0.619}{0.619+K_n} \left( 1+c_K \right)
@@ -112,6 +111,8 @@ $K_n$ is the Knudsen number defined as $K_n = \bar{l}/a$, $\bar{l}$ the mean fre
 
 \subsubsection{Inductive damping}
 \label{subsubsec:inductive-damping}
+The induced flux inside of the loops changes as the particle moves. A change in flux induces an electromotive force in the tracks. This results in a current and dissipates energy as heat.
+
 The enclosed flux in the loops will change as the particle moves. A changing flux induces a current in the loops which is a dissipative process. Using COMSOL we make an estimate of the dissipation by calculating the induced current in the loops.
 
 TODO: we still need to do this simulation, but I think it will be very similar to the Eddy current damping? Need to check what COMSOL does exactly.

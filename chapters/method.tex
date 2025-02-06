@@ -46,16 +46,21 @@ Inside of the inner loop of the coil, we mill a hole of roughly \qty{15}{\um} de
 \end{figure}
 
 \section{Experimental setup}
-The sample is mounted on a printed circuit board (PCB) with a thick (\qty{1}{\mm}) copper baseplate. The top of the sample is exactly flush with the top of the PCB. Additionally the pads for the wirebonds on the sample and the PCB are aligned and directly next to each other. This allows for very short wirebonds to which significantly reduces the resistance and thus the maximum current that can be applied to the sample. The wirebonds are made of \qty{25}{\um} thick \ce{Al}.
+The sample is mounted on a printed circuit board (PCB) with a thick (\qty{1}{\mm}) copper baseplate. The top of the sample is exactly flush with the top of the PCB. Additionally the pads for the wirebonds on the sample and the PCB are aligned and directly next to each other. This allows for very short wirebonds which significantly reduces the resistance and thus the maximum current that can be applied to the sample. The wirebonds are made of \qty{25}{\um} thick \ce{Al}.
 
 The PCB is then placed inbetween two Helmholtz coils with a diameter of \qty{30}{\mm} and 825 windings. These are the same coils as used in our previous work\cite{eli,mart}. The Helmholtz coils provide the uniform magnetic field to align the sample and the gradient magnetic field to control the vertical position of the particle. A dc current on the order of \qty{0.5}{\ampere} is sent through the coils by two power supplies (Tenma 72-2540).
 
-A microscope objective with a $10\times$ magnification and large working distance is used to provide a visual image of the sample. Additionally a laser (\qty{635}{\nm}, \qty{1}{\milli\watt}) is coupled in. The reflection of the laser is then imaged on a photodiode (ThorLabs PDA36A2). The photodiode is connected to a lock-in amplifier (Zurich Instruments MFLI) allowing for the detection of the motion of the particle. In addition to the photodiode, we can use the camera feed to analyse the motion of the particle.
+A microscope objective with a $10\times$ magnification and large working distance is used to provide a visual image of the sample. Additionally a laser (\qty{635}{\nm}, \qty{1}{\milli\watt}) is coupled in. The reflection of the laser is then imaged on a photodiode (ThorLabs PDA36A2). The photodiode is connected to a lock-in amplifier (Zurich Instruments MFLI) allowing for the detection of the motion of the particle. In addition to the photodiode, we can use the camera feed to analyse the motion of the particle. See \autoref{fig:optics}.
 
-TODO: schematic of setup
+\begin{figure}
+    \centering
+    \includegraphics{figures/optics.jpg}
+    \caption{On the left side of the figure the \qty{635}{\nm} (red) laser is shown. Two mirrors are used to navigate the beam and it is combined with a whitelight source by use of a dichroic mirror. A beamsplitter guides the light down through a microscope objective which focusses the light on the PCB with the chip. The light is reflected and a beamsplitter sends the laser light to a photodiode and a camera images the remaining light.}
+    \label{fig:optics}
+\end{figure}
 
 \subsection{Laser analysis}
-TODO
+Due to the movement of the particle, the reflected laser light will be modulated. The photodiode is used to detect this modulation producing a signal that is proportional to the motion of the particle. The lock-in amplifier is used to read out this signal producing a power-spectral density (PSD) of the motion of the particle.
 
 \subsection{Camera analysis}
 To analyse the camera feed we use a flat-field correction without accounting for the dark frame image. The flat-field is obtained by taking 20 images of the sample when the particle is not trapped and rapdily moving around. The flat-field is then calculated by taking the average of these images. The following transormation is then applied to the frames of the camera feed:
@@ -64,4 +69,9 @@ To analyse the camera feed we use a flat-field correction without accounting for
     \tag{flat-field correction}
     \label{eq:flat-field-correction}
 \end{equation}
-where $C$ is the corrected image, $m$ is the average value of the flat-field, $R$ is the raw image and $F$ is the flat-field. The camera feed is processed in grayscale. Due to the flat field correction we get a very clear indication of the position of the particle. This allows us to fit a 2D Gaussian to the particle and determine its position based on the center of the Gaussian.
+where $C$ is the corrected image (array), $m$ is the average value of the flat-field (number), $R$ is the raw image and $F$ is the flat-field (array). The camera feed is processed in grayscale. Due to the flat field correction we get a very clear indication of the position of the particle. This allows us to fit a 2D Gaussian to the particle and determine its position based on the center of the Gaussian. These positions over time are turned into a power-spectral density (PSD) of the motion of the particle.
+
+\subsection{Driving}
+To drive the particle we use either an external coil or the bottom Helmholtz coil. Using the external coil we can very easily drive the particle in different directions by moving the coil around. During our experiments however we found that it is much easier to drive the \zmode using the bottom Helmholtz coil. The signal for the coil is either generated by the lock-in amplifier or a function generator (Rigol DG1022Z). In both cases we use a buffer amplifier rated for \qty{600}{\milli\ampere} that was made in-house.
+
+Since it is not possible to connect the camera feed to a lock-in, we wrote our own `lock-in like' protocol. In this protocol we sweep the driving frequency and take a spectrum for each value of the driving frequency. We then match the peak of the spectrum to the driving frequency and determine the amplitude of the peak. This amplitude is then used to determine the power-spectral density of the motion of the particle. This method has the advantage of being able to more clearly see the resonance peaks of the particle compared to continiously sweeping the driving frequency and taking a single spectrum.
