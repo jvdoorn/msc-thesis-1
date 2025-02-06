@@ -6,7 +6,7 @@ In this chapter we will discuss the results presented in \autoref{chap:results}.
 As mentioned in \autoref{chap:results}, the particle lost its magnetization when irradiated with the laser at low pressures ($<\qty{1}{\milli\bar}$). Decreasing the laser intensity also ment a smaller SNR. Due to this tradeoff a decision was made to only use camera measurements at low pressure. A comparision between the two methods will follow. Besides the total loss of magnetization we are also not sure how well the particle retains its magnetization over time. In addition to this we are also not sure what the resulting magnetization is since we do not reach the saturation field. A future project will focus on designing a device that can fully saturate the particle.
 
 \section*{Damping at low pressures}
-We observed a limit in the Q-factor for pressures below \qty{1E-2}{\milli\bar}. Attempts to model this have been unsuccessful and do not match the experimental results (see \autoref{tab:dissipation}. Proper modelling of the dissipation should involve a time dependent simulation in COMSOL instead of using a Lorentz term. The main reason for this is that a displacement of the particle brings it closer to its surrounding meaning any effects due to the magnetization of the particle will be stronger. Another source of damping could be eddy currents inside of the particle itself. In addition to this we should consider additional sources of dampign, such as noise from the electronics or anisotropy (differences in magnetization) inside the particle\cite{millen}. Additionally a recent paper also discusses eddy currents in more detail and how they would behave in superconductors as well\cite{fuwa_stable_2023}. If the damping is caused by eddy currents inside of the particle, then we should expect a relation between $\gamma$ and $i_1$.
+We observed a limit in the Q-factor for pressures below \qty{1E-2}{\milli\bar}. Attempts to model this have been unsuccessful and do not match the experimental results (see \autoref{tab:dissipation}). Proper modelling of the dissipation should involve a time dependent simulation in COMSOL instead of using a Lorentz term. The main reason for this is that a displacement of the particle brings it closer to its surrounding meaning any effects due to the magnetization of the particle will be stronger. Another source of damping could be eddy currents inside the particle itself. In addition to this we should consider additional sources of dampign, such as noise from the electronics or anisotropy (differences in magnetization) inside the particle\cite{millen}. Additionally, a recent paper also discusses eddy currents in more detail and how they would behave in superconductors as well\cite{fuwa_stable_2023}. If the damping is caused by eddy currents inside the particle, then we should expect a relation between $\gamma$ and $i_1$.
 
 \section*{Laser v.s. camera readout}
 The disadvantages and advantages of the camera and laser readout are summarized in \autoref{tab:laser-vs-camera-readout}.
@@ -18,7 +18,7 @@ The disadvantages and advantages of the camera and laser readout are summarized 
         \midrule
         \begin{itemize}[left=0pt,topsep=0pt,label=\textcolor{green}{\texttt{+}}]
             \item Immediate visual feedback about the behaviour of the particle;
-            \item SNR only dependent on the contrast of the particle (which is really good with a flat field correction);
+            \item SNR only dependent on the contrast of the particle;
         \end{itemize} \begin{itemize}[left=0pt,topsep=0pt,label=\textcolor{red}{\texttt{-}}]
             \item Limited sample rate (roughly \qty{400}{\fps}) so observation of the librational modes is not possible;
             \item No `real' lock-in measurements possible;
@@ -29,7 +29,7 @@ The disadvantages and advantages of the camera and laser readout are summarized 
         \end{itemize} \begin{itemize}[left=0pt,topsep=0pt,label=\textcolor{red}{\texttt{-}}]
             \item SNR is dependent on the laser intensity, background light and electronic noise;
             \item No immediate visual feedback about the behaviour of the particle;
-            \item High laser intensity can cause the particle to loose its magnetization;
+            \item High laser intensity can cause the particle to lose its magnetization;
         \end{itemize} \\
         \bottomrule
     \end{tabularx}
@@ -40,18 +40,18 @@ The disadvantages and advantages of the camera and laser readout are summarized 
 In the future laser readout is key to properly study the $\gamma$ and $\beta$ modes at low pressures. The idea is to move to an interferometric setup to measure the position of the particle. This has a higher SNR if done correctly. In addition to this we are also investigating the use of NV centers in diamond to measure the position of the particle. An additional advantage of NV centers is that they may also allow for sideband cooling.
 
 \section*{Lorentzian fits}
-To obtain the data in \autoref{fig:xyz-mode-dependence-on-trapping-frequency-1mbar} we fitted the peaks in our data with a Lorentzian. This was done to obtain the Q-factor of the peaks. It is however better to fit all peaks at once instead of individually. The reason we did not do so is because there was spectra were not very clean. An example of this is the fact that there was crosstalk between the horizontal and vertical spectra. A more careful analysis could properly rotate the spectra to avoid this crosstalk. This might make it easier to do a single fit per spectra instead of 2 seperate fits.
+To obtain the data in \autoref{fig:xyz-mode-dependence-on-trapping-frequency-1mbar} we fitted the peaks in our data with a Lorentzian. This was done to obtain the Q-factor of the peaks. It is however better to fit all peaks at once instead of individually. The reason we did not do so is that the spectra were not very clean. An example of this is the fact that there was crosstalk between the horizontal and vertical spectra. A more careful analysis could properly rotate the spectra to avoid this crosstalk. This might make it easier to do a single fit per spectra instead of 2 seperate fits.
 
 \section*{Trapping at low pressures}
 Qualitatively we found it to be very hard to trap the particle at low pressures ($<\qty{1}{\milli\bar}$) when starting from an untrapped state. It is likely that more damping is needed to dissipate the energy of the particle or active feedback to trap the particle. This is something that should be investigated further.
 
 \section*{Loss of levitation}
-A major source of confusion (and frustration) was the sudden loss of levitation. For long periods of time our particle was easily trapped without major issues. However, just before the Christmas holiday it became very difficult to trap. We had previously seen that heating can cause the particle to loose its magnetization, but didn't appear to be the case as it still responded to the magnetic field. An attempt was mode to remagnetize the particle which did not matter much. Using an optical microscope we noted a black `smut' in and around the trap. This was further confirmed using SEM measurements. This `smut' was not found on earlier images before we used the trap. See \autoref{fig:smut-optical-microscope}.
+A major source of confusion (and frustration) was the sudden loss of levitation. For long periods of time our particle was easily trapped without major issues. However, just before the Christmas holiday it became very difficult to trap. We had previously seen that heating can cause the particle to lose its magnetization, but didn't appear to be the case as it still responded to the magnetic field. An attempt was mode to remagnetize the particle which did not matter much. Using an optical microscope we noted a black `smut' in and around the trap. This was further confirmed using SEM measurements. This `smut' was not found on earlier images before we used the trap. See \autoref{fig:smut-optical-microscope}.
 
 \begin{SCfigure}[50]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/sample/dirt_optical_microscope.jpeg}
-    \caption{An optical microscope image showing the `smut' around the trap. This `smut' is also present inside of the trap.}
+    \caption{An optical microscope image showing the `smut' around the trap. This `smut' is also present inside the trap.}
     \label{fig:smut-optical-microscope}
 \end{SCfigure}
 

@@ -2,7 +2,7 @@
 \label{chap:results}
 The datasheet of our \ce{NdFeB} particles specifies that their residual magnetic field is \qtyrange{730}{760}{\milli\tesla}. Full saturation (\qty{>95}{\percent}) is achieved when a \qty{2}{\tesla} field is applied\cite{magnequench}. Our method of magnetising the particle was limited to a \qty{1.4}{\tesla} field. As such, it is likely that we did not achieve the full saturation of the particle and that the residual magnetic field is lower than specified. Assuming a roughly linear relation between the two values, we estimate the residual magnetic field of our particles to be \qtyrange{510}{530}{\milli\tesla}. The density of the particles is given as \qty{7430}{\kilo\gram\per\cubic\meter}\cite{magnequench}.
 
-These values, together with the simulation of the magnetic field distribution in the trap, allows us to estimate the required driving frequency and the resulting eigen frequency. \autoref{fig:magnetic-field-curvature} shows the $z$-component of the ac magnetic field ($\vec{B_1}$) for a range of $\chi$ values as well as the curvature. It is important to note that the \xmode and \ymode have a negative curvature, whilst the \zmode has a positive curvature. This means that $x$ and $y$ are not stable. Half a period later however this will have changed and the particle will be stable in the $x$- and $y$-direction instead of the $z$-direction. This is what leads to the ponderomotive effect. The curves for $y$ are not symmetric because the slit is in the direction of the \ymode.
+These values, together with the simulation of the magnetic field distribution in the trap, allow us to estimate the required driving frequency and the resulting eigen frequency. \autoref{fig:magnetic-field-curvature} shows the $z$-component of the ac magnetic field ($\vec{B_1}$) for a range of $\chi$ values as well as the curvature. It is important to note that the \xmode and \ymode have a negative curvature, whilst the \zmode has a positive curvature. This means that $x$ and $y$ are not stable. Half a period later however this will have changed, and the particle will be stable in the $x$- and $y$-direction instead of the $z$-direction. This is what leads to the ponderomotive effect. The curves for $y$ are not symmetric because the slit is in the direction of the \ymode.
 
 Using \autoref{eq:eigenfrequencies} and \autoref{eq:frequency-constraint} we can then estimate the required driving frequency and the resulting eigen frequencies. These results are shown in \autoref{fig:eigen-frequency-xi-dependence}.
 
@@ -47,7 +47,7 @@ At \qty{1}{\milli\bar} the readout was performed using the Thorcam and analysed 
 \begin{SCfigure}
     \centering
     \includegraphics{figures/data/xyz_mode_dependence_on_driving_frequency_spectrum.pdf}
-    \caption{The dependence of $\omega_{x,y,z}$ on $\Omega$ at \qty{1}{\milli\bar}. Shown are two directions (horizontal and vertical), they live in the $xy$-plane but do not directly match to the \xmode / \ymode, a small rotation angle needs to be taken into account.}
+    \caption{The dependence of $\omega_{x,y,z}$ on $\Omega$ at \qty{1}{\milli\bar}. Shown are two directions (horizontal and vertical), they live in the $xy$-plane but do not directly match to the \xmode or \ymode, a small rotation angle needs to be taken into account.}
     \label{fig:xyz-mode-dependence-1mbar}
 \end{SCfigure}
 

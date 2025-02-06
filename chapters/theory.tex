@@ -10,17 +10,17 @@ The energy of a magnetic object in a magnetic field is given by:
     \tag{magnetic potential}
     \label{eq:magnetic_potential_definition}
 \end{equation}
-where $\vec{\mu}$ is the magnetic moment of the object and $\vec{B}$ is the magnetic field. A magnetic Paul trap uses a static homogeneous field ($\vec{B_0}$) to align the magnetic moment of the object. In our case we assume alignment with the $z$-axis. A second dynamic field ($\vec{B_1}$) contains the saddle point. Because the field is dynamic, the unstable direction is time dependent. By rapidly changing the field, the object is effectively trapped in the saddle point. This leads to a ponderomotive force\cite{perdriat}. Finally a gradient field ($\vec{B_2}$) is used to counteract the gravitational force\cite{perdriat}. In the remainder of this section we will derive the magnetic potential and the associated eigenfrequencies.
+where $\vec{\mu}$ is the magnetic moment of the object and $\vec{B}$ is the magnetic field. A magnetic Paul trap uses a static homogeneous field ($\vec{B_0}$) to align the magnetic moment of the object. In our case we assume alignment with the $z$-axis. A second dynamic field ($\vec{B_1}$) contains the saddle point. Because the field is dynamic, the unstable direction is time dependent. By rapidly changing the field, the object is effectively trapped in the saddle point. This leads to a ponderomotive force\cite{perdriat}. Finally, a gradient field ($\vec{B_2}$) is used to counteract the gravitational force\cite{perdriat}. In the remainder of this section we will derive the magnetic potential and the associated eigenfrequencies.
 
 \subsection{Fields}
 \label{subsec:fields}
-The homogeneous field is given in \autoref{eq:homogeneous_field}. It too is oriented in the $z$-axis with magnitude $B_0$. In our experiment we will use two Helmholtz coils to create this field.
+The homogeneous field is given in \autoref{eq:homogeneous_field}, it too is oriented in the $z$-axis with magnitude $B_0$. In our experiment we will use two Helmholtz coils to create this field.
 \begin{equation}
     \vec{B_0}(\vec{r}, t) = \vec{B_0} = B_0 \zhat
     \label{eq:homogeneous_field}
 \end{equation}
 
-The static field is given in \autoref{eq:saddle_point}. $B_1''$ is the curvature of $\vec{B_1}$ and $\Omega / 2\pi$ the frequency of the oscillation. The field is created using two coplanar loops of with a current in opposite directions. These loops are the main focus of this thesis. Given the radius of the inner (outer) loop $r_1$ ($r_2$) we can express the curvature as $B_1'' = -\frac{9}{16}\mu_0i_1/r_1^3$ where $i_1$ ($i_2$) is the current through the inner (outer) loop\cite{perdriat}. This assume that $i_2/i_1 = -r_2/r_1 = -\xi$.
+The static field is given in \autoref{eq:saddle_point}. $B_1''$ is the curvature of $\vec{B_1}$ and $\Omega / 2\pi$ the frequency of the oscillation. The field is created using two coplanar loops of with a current in opposite directions. These loops are the main focus of this thesis. Given the radius of the inner (outer) loop $r_1$ ($r_2$) we can express the curvature as $B_1'' = -\frac{9}{16}\mu_0i_1/r_1^3$ where $i_1$ ($i_2$) is the current through the inner (outer) loop\cite{perdriat}. This assumes that $i_2/i_1 = -r_2/r_1 = -\xi$.
 \begin{equation}
     \vec{B_1}(\vec{r}, t) = \frac{B_1''}{2} \begin{pmatrix}
         -xz \\
@@ -30,7 +30,7 @@ The static field is given in \autoref{eq:saddle_point}. $B_1''$ is the curvature
     \label{eq:saddle_point}
 \end{equation}
 
-Finally we have the gradient field, given in \autoref{eq:gradient_field}. The required gradient can be expressed as $B_2' = mg/\mu$ where $m$ is the mass of the levitated object, $g$ the gravitational acceleration and $\mu$ the magnetic moment of the object. The gradient serves to offset the effect of gravity. As such the gradient is also oriented in the $z$-axis. The gradient field can be created by using a larger current in one of the Helmholtz coils.
+Finally, we have the gradient field, given in \autoref{eq:gradient_field}. The required gradient can be expressed as $B_2' = mg/\mu$ where $m$ is the mass of the levitated object, $g$ the gravitational acceleration and $\mu$ the magnetic moment of the object. The gradient serves to offset the effect of gravity. As such the gradient is also oriented in the $z$-axis. The gradient field can be created by using a larger current in one of the Helmholtz coils.
 \begin{equation}
     \vec{B_2}(\vec{r}, t) = B_2' \begin{pmatrix}
         -x / 2 \\
@@ -60,7 +60,7 @@ By taking the inner product of the magnetic moment and the fields we can derive 
 
 \subsection{Eigenfrequencies}
 \label{subsec:eigenfrequencies}
-Starting from \autoref{eq:magnetic_potential} and averaging over the oscillation period we can derive the eigenfrequencies\cite{perdriat}. They are given in \autoref{eq:eigenfrequencies}. In these equations $a$ is the radius of the levitated object (such that $V \sim a^3$) and $\rho_m$ is the density of the object. The eigenfrequencies associated with the orientation of the magnet depend on $B_0$, which intuitively makes sense since the orientation of the magnet is determined by the homogenous field. The eigenfrequencies associated with the position of the magnet depend on $B_1''$, which also makes sense since the alternating field is what restricts the movement of the object.
+Starting from \autoref{eq:magnetic_potential} and averaging over the oscillation period we can derive the eigenfrequencies\cite{perdriat}. They are given in \autoref{eq:eigenfrequencies}. In these equations $a$ is the radius of the levitated object (such that $V \sim a^3$) and $\rho_m$ is the density of the object. The eigenfrequencies associated with the orientation of the magnet depend on $B_0$, which intuitively makes sense since the orientation of the magnet is determined by the homogeneous field. The eigenfrequencies associated with the position of the magnet depend on $B_1''$, which also makes sense since the alternating field is what restricts the movement of the object.
 \begin{equation}
     \begin{gathered}
         \omega_\gamma = \omega_{\beta} = \sqrt{\frac{5}{2}\frac{B_0B_\text{sat}}{\mu_0 \rho_m a^2}} \\
@@ -81,7 +81,7 @@ Rotation around the $z$-axis (the angle $\alpha$) is not restricted by any magne
 \end{equation}
 In this equation $I$ is the moment of inertia of the object. The moment of inertia of a sphere is given by $I = \frac{2}{5} m a^2$. Due to the spherical symmetry of the object this mode is very hard to detect experimentally.
 
-In short, the eigenfrequencies are determined by the magnetic fields and the size of the object. The orientation of the magnetic moment and the associated librational eigenfrequencies are determined by the homogenous field. The position of the object and the associated vibrational eigenfrequencies are determined by the dynamic field. The rotation around the $z$-axis of the object is not restricted by any magnetic field.
+In short, the eigenfrequencies are determined by the magnetic fields and the size of the object. The orientation of the magnetic moment and the associated librational eigenfrequencies are determined by the homogeneous field. The position of the object and the associated vibrational eigenfrequencies are determined by the dynamic field. The rotation around the $z$-axis of the object is not restricted by any magnetic field.
 
 \section{Damping}
 \label{sec:damping}
