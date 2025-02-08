@@ -1,12 +1,12 @@
 \chapter{Definition and conversion of Q-factors}
 \label{app:q_factors}
 
-The goal of this appendix is ot provide a clear definition of the Q-factor and to derive (using simulations) how the Q-factor can be obtained. In particular we will study a system described by the following differential equation:
+The goal of this appendix is ot provide a clear definition of the Q-factor and to derive (using simulations) how the Q-factor can be obtained. In particular, we will study a system described by the following differential equation:
 \begin{equation}
     \ddot{x} - \gamma \dot{x} + \omega_0^2 x = D(t)
     \tag{damped h.o.}
 \end{equation}
-where $x$ is the signal amplitude (we will use meters, but the results are independent of units), $\gamma$ is the damping rate in \unit{\per\second}, $\omega_0 = 2\pi f_0$ is the resonance frequency in \unit{\radian\per\second} and $D(t)$ is the driving force. We specifically consider the case where $0 < \gamma \leq 1$. For a more general treatment of Q-factors, including non-linear systems, see \citeauthor{wang_rigorous_2017}.
+where $x$ is the signal amplitude (we will use meters, but the results are independent of units), $\gamma$ is the damping rate in \unit{\per\second}, $\omega_0 = 2\pi f_0$ is the resonance frequency in \unit{\radian\per\second} and $D(t)$ is the driving force. We specifically consider the case where $0 < \gamma \leq 1$. For a more general treatment of Q-factors, including non-linear systems, see \textcite{wang_rigorous_2017}.
 
 \section{Q-factor definition}
 There are two common definitions of the Q-factor. The first is the \textit{bandwidth} definition, where the Q-factor is given by the ratio between the resonance frequency and the bandwidth of the resonance.
@@ -34,7 +34,7 @@ where $\Gamma$ is the FWHM of the peak. Coincidentally, the FWHM is equal to the
 \end{equation}
 
 \subsection{Fourier spectrum}
-There is a caveat however. When looking at a peak in a `normal' Fourier spectrum, meaning you look at the amplitude of the signal, the magnitude of the peak is instead described by (this can be found in most textbooks on classical mechanics, such as Chapter~3.6 in \citeauthor{fowles_analytical_2005}):
+However, there is a caveat. When looking at a peak in a `normal' Fourier spectrum, meaning you look at the amplitude of the signal, the magnitude of the peak is instead described by (this can be found in most textbooks on classical mechanics, such as Chapter~3.6 in \textcite{fowles_analytical_2005}):
 \begin{equation}
     A(f) \propto \sqrt{\frac{1}{(\omega^2 - \omega_0^2)^2 + \gamma^2\omega^2}}
 \end{equation}

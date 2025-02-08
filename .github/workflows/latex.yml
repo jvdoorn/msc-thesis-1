@@ -23,7 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           RELEASE_BRANCHES: main
-          DEFAULT_BUMP: ${{ github.ref == 'refs/heads/main' && 'minor' || 'patch' }}
+          DEFAULT_BUMP: patch
           DRY_RUN: true # We want to manually create the release.
       - run: |
           echo "${{ steps.version.outputs.new_tag }}" > version

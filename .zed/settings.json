@@ -7,9 +7,14 @@
     "ltex": {
       "settings": {
         "ltex": {
-          "language": "en-EN"
+          "language": "en"
         }
       }
+    }
+  },
+  "languages": {
+    "LaTeX": {
+      "soft_wrap": "editor_width"
     }
   }
 }
