@@ -10,7 +10,7 @@ The energy of a magnetic object in a magnetic field is given by:
     \tag{magnetic potential}
     \label{eq:magnetic_potential_definition}
 \end{equation}
-where $\vec{\mu}$ is the magnetic moment of the object and $\vec{B}$ is the magnetic field. A magnetic Paul trap uses a static homogeneous field ($\vec{B_0}$) to align the magnetic moment of the object. In our case we assume alignment with the $z$-axis. A second dynamic field ($\vec{B_1}$) contains the saddle point. Because the field is dynamic, the unstable direction is time dependent. By rapidly changing the field, the object is effectively trapped in the saddle point. This leads to a ponderomotive force\cite{perdriat}. Finally, a gradient field ($\vec{B_2}$) is used to counteract the gravitational force\cite{perdriat}. In the remainder of this section we will derive the magnetic potential and the associated eigenfrequencies.
+where $\vec{\mu}$ is the magnetic moment of the object and $\vec{B}$ is the magnetic field. A magnetic Paul trap uses a static homogeneous field ($\vec{B_0}$) to align the magnetic moment of the object. In our case we assume alignment with the $z$-axis. A second dynamic field ($\vec{B_1}$) contains the saddle point. Because the field is dynamic, the unstable direction is time-dependent. By rapidly changing the field, the object is effectively trapped in the saddle point. This leads to a ponderomotive force\cite{perdriat}. Finally, a gradient field ($\vec{B_2}$) is used to counteract the gravitational force\cite{perdriat}. In the remainder of this section we will derive the magnetic potential and the associated eigenfrequencies.
 
 \subsection{Fields}
 \label{subsec:fields}
@@ -111,13 +111,12 @@ $K_n$ is the Knudsen number defined as $K_n = \bar{l}/a$, $\bar{l}$ the mean fre
 
 \subsubsection{Inductive damping}
 \label{subsubsec:inductive-damping}
-The induced flux inside of the loops changes as the particle moves. A change in flux induces an electromotive force in the tracks. This results in a current and dissipates energy as heat.
-
-The enclosed flux in the loops will change as the particle moves. A changing flux induces a current in the loops which is a dissipative process. Using COMSOL we make an estimate of the dissipation by calculating the induced current in the loops.
-
-TODO: we still need to do this simulation, but I think it will be very similar to the Eddy current damping? Need to check what COMSOL does exactly.
+The induced flux inside of the loops changes as the particle moves. A change in flux induces an electromotive force in the tracks, which in turn induces a current.
+\begin{equation}
+    \mathcal{E} = -\frac{d\Phi_\text{loop}}{dt} \Rightarrow I_\text{loop} = \frac{\mathcal{E}}{R_\text{loop}}
+\end{equation}
+In this equation $\mathcal{E}$ is the electromotive force, $\Phi_\text{loop}$ the flux enclosed by the loop, $I_\text{loop}$ the current in the loop and $R_\text{loop}$ the resistance of the loop. The induced current will lead to a dissipation of energy through Joule heating, the dissipated power is given by $P = I_\text{loop}^2 R_\text{loop} = \frac{\mathcal{E}^2}{R_\text{loop}}$.
 
 \subsubsection{Eddy current damping}
 \label{subsubsec:eddy-current-damping}
-Eddy currents are small `whirlpools' of current that are induced by a changing magnetic field. Due to the resistance of the conductor this will lead to dissipation of energy.
-TODO: add more information on this.
+Eddy currents are similar to the current induced by the changing flux in the loops. However, eddy currents are local effect in the loops or the particle. Due to local changes in the magnetic field, free charges in the conductor will start to move in circles, this is the eddy current. Similar to inductive damping this will lead to a dissipation of energy through Joule heating. The particle can experience eddy currents due to the $\vec{B_0}$, $\vec{B_1}$ and $\vec{B_2}$ fields.
