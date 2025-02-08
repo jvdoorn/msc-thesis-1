@@ -44,7 +44,7 @@ At atmospheric pressure we determined the dependence of $\omega_{x,y}$ on $\Omeg
 \label{sec:measurements-at-low-pressure}
 At \qty{1}{\milli\bar} the readout was performed using the Thorcam and analysed using our custom object tracking algorithm. The reason to no longer use laser readout is due to the heating of the particle. By equating the power of the laser to Stefan-Boltzmann law we find that, in equillibrium assuming no heat dissipation through air, the temperature of the particle could reach \qty{2500}{\kelvin}. Even if only a fraction of the laser power would reach the particle this would be enough to reach its Curie temperature of \qty{320}{\celsius}\cite{magnequench}. Lower laser powers leads to an insufficient signal-to-noise ratio. We will return to this in the discussion. For a more thorough analysis of heating refer to \cite{millen}.
 
-\begin{SCfigure}
+\begin{SCfigure}[][h]
     \centering
     \includegraphics{figures/data/xyz_mode_dependence_on_driving_frequency_spectrum.pdf}
     \caption{The dependence of $\omega_{x,y,z}$ on $\Omega$ at \qty{1}{\milli\bar}. Shown are two directions (horizontal and vertical), they live in the $xy$-plane but do not directly match to the \xmode or \ymode, a small rotation angle needs to be taken into account.}
@@ -53,7 +53,7 @@ At \qty{1}{\milli\bar} the readout was performed using the Thorcam and analysed 
 
 \autoref{fig:xyz-mode-dependence-1mbar} shows the dependence of $\omega_{x,y,z}$ at \qty{1}{\milli\bar}. We note that compared to the measurements at atmospheric pressures that the width of the peak is substantially smaller. Whilst this measurement shows a clear dependence of $\omega_{x,y,z}$ on $\Omega$, it is very difficult to see the \zmode. These measurements were obtained by continiously sweeping the driving frequency. Instead, we can do a `lock-in like' measurement as described in \autoref{chap:method}. An example of such a measurement is shown in \autoref{fig:xyz-mode-spectrum-1mbar}.
 
-\begin{SCfigure}
+\begin{SCfigure}[][h]
     \centering
     \includegraphics{figures/data/xyz_mode_spectrum.pdf}
     \caption{A PSD with a visible \xmode, \ymode and \zmode. The diagonal line is caused by the changing driving frequency. By looking at the magnitude along the diagonal line the eigenfrequencies and Q-factors can be }
@@ -95,12 +95,14 @@ Visually it appears that $\gamma$ is constant as a function of $\Omega$. The que
 \label{sec:q-factor-dependence-on-pressure}
 Using an external coil we are able to excite the \xmode  and \ymode seperately. Ringdown measurements are performed to determine the pressure dependence on the Q-factor. The Q-factor in this case is defined as $Q = \omega_{x,y} \cdot \tau / 2$ where $\tau$ is the decay time of the oscillation ($\sim \exp\left(t / \tau\right)$). We qualitatively observed a strong dependence of the Q-factor on the driving amplitude. When the driving amplitude is too high we observe non-linear time dependent behaviour. The results in \autoref{fig:q-factor-pressure-dependence} are obtained with a sufficiently low driving amplitude.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics{figures/data/q_factor_pressure_dependence.pdf}
     \caption{The pressure dependence of the Q-factor for the $x$-, $y$- and $z$-mode. The dashed lines are a prediction based on the theory from \autoref{sec:damping}. The experimental Q-factors are determined using the ringdown method. The \zmode only been observed at \qty{1}{\milli\bar} and extrapolated from the data in \autoref{fig:xyz-mode-dependence-on-trapping-frequency-1mbar}. The driving frequency is $\Omega/2\pi = \qty{1.8}{\kilo\hertz}$.}
     \label{fig:q-factor-pressure-dependence}
 \end{figure}
+
+An attempt was made to model the damping at low pressures. This was done in COMSOL where we used the estimated maximum velocity of the particle as a Lorentz factor in the magnetic field. We considered two cases: the particle induced a current in the tracks and the particle induced a current in a \ce{Ga} layer of \qty{1}{\micro\meter} thick around the trap. The reason to model the \ce{Ga}-layer is due to contamination during FIB milling. The results are shown in \autoref{tab:dissipation}. The dissipation of the \zmode is not included in this table because it has not been measured. Eddy current in the particle itself have not been taken into account.
 
 \begin{table}
     \centering
@@ -113,11 +115,11 @@ Using an external coil we are able to excite the \xmode  and \ymode seperately. 
         Ringdown measurements & \num{21.55 \pm 0.8} & \num{20.7 \pm 2.1} & --- \\
         \midrule
         Track dissipation sim. & \num{1.3878E-3} & \num{5.8018E-4} & \num{3.6026E-6} \\
-        \ce{Ga+} dissipation sim. & \num{0.595} & \num{0.393} & \num{0.272} \\
+        \ce{Ga}-layer dissipation sim. & \num{0.595} & \num{0.393} & \num{0.272} \\
         % Thin wire model & \num{1.02} & \num{0.631} & \num{3.26} \\
         % Induction dissipation sim. & ??? & ??? & ??? \\
         \bottomrule
     \end{tabularx}
-    \caption{The measured dissipation at low pressures ($<\qty{1E-3}{\milli\bar}$) for the \xmode and \ymode (data in \autoref{fig:q-factor-pressure-dependence}) compared to the simulated dissipation of various sources.}
+    \caption{The measured dissipation at low pressures ($<\qty{1E-3}{\milli\bar}$) for the \xmode and \ymode (data in \autoref{fig:q-factor-pressure-dependence}) compared to the simulated dissipation through induction and eddy currents in either the tracks and a thin \ce{Ga} layer.}
     \label{tab:dissipation}
 \end{table}
