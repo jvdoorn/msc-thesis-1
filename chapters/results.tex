@@ -1,22 +1,22 @@
 \chapter{Results}
 \label{chap:results}
-The datasheet of our \ce{NdFeB} particles specifies that their residual magnetic field is \qtyrange{730}{760}{\milli\tesla}. Full saturation (\qty{>95}{\percent}) is achieved when a \qty{2}{\tesla} field is applied\cite{magnequench}. Our method of magnetising the particle was limited to a \qty{1.4}{\tesla} field. As such, it is likely that we did not achieve the full saturation of the particle and that the residual magnetic field is lower than specified. Assuming a roughly linear relation between the two values, we estimate the residual magnetic field of our particles to be \qtyrange{510}{530}{\milli\tesla}. The density of the particles is given as \qty{7430}{\kilo\gram\per\cubic\meter}\cite{magnequench}.
+The datasheet of our \ce{NdFeB} particles specifies that their residual magnetic field is \qtyrange{730}{760}{\milli\tesla}. Full saturation (\qty{>95}{\percent}) is achieved when a \qty{2}{\tesla} field is applied\cite{magnequench}. Our method of magnetizing the particle was limited to a \qty{1.4}{\tesla} field. As such, it is likely that we did not achieve the full saturation of the particle and that the residual magnetic field is lower than specified. Assuming a roughly linear relation between the two values, we estimate the residual magnetic field of our particles to be \qtyrange{510}{530}{\milli\tesla}. The density of the particles is given as \qty{7430}{\kilo\gram\per\cubic\meter}\cite{magnequench}.
 
 These values, together with the simulation of the magnetic field distribution in the trap, allow us to estimate the required driving frequency and the resulting eigenfrequency. \autoref{fig:magnetic-field-curvature} shows the $z$-component of the ac magnetic field ($\vec{B_1}$) for a range of $\xi$ values as well as the curvature. It is important to note that the \xmode and \ymode have a negative curvature, whilst the \zmode has a positive curvature. This means that $x$ and $y$ are not stable. Half a period later however this will have changed, and the particle will be stable in the $x$- and $y$-direction instead of the $z$-direction. This is what leads to the ponderomotive effect. The curves for $y$ are not symmetric because the slit is in the direction of the \ymode.
 
-Using \autoref{eq:eigenfrequencies} and \autoref{eq:frequency-constraint} we can then estimate the required driving frequency and the resulting eigen frequencies. These results are shown in \autoref{fig:eigen-frequency-xi-dependence}.
+Using \autoref{eq:eigenfrequencies} and \autoref{eq:frequency-constraint} we can then estimate the required driving frequency and the resulting eigenfrequencies. These results are shown in \autoref{fig:eigen-frequency-xi-dependence}.
 
 \begin{figure}
     \centering
     \includegraphics{figures/data/magnetic_field_curvature.pdf}
-    \caption{the \textbf{top} figures from left to right show $z$-component of the magnetic field evaluated along a line parallel to the $x$-, $y$- and $z$-axis respectively through the origin. The gray zones indicate the boundaryies of the trap. The \textbf{bottom left} figure shows the curvature of the magnetic field for these calculations evaluated in the extrema. The simulations were performed for $i_1=\qty{0.5}{\ampere}$ and $\xi$ between \numrange{0.5}{5}. The curves have been labelled with the corresponding value for $\xi$. In addition to this the offset in $y$ due to the trap asymmetry is shown in the \textbf{bottom right} figure.}
+    \caption{The \textbf{top} figures from left to right show $z$-component of the magnetic field evaluated along a line parallel to the $x$-, $y$- and $z$-axis respectively through the origin. The gray zones indicate the boundaries of the trap. The \textbf{bottom left} figure shows the curvature of the magnetic field for these calculations evaluated in the extrema. The simulations were performed for $i_1=\qty{0.5}{\ampere}$ and $\xi$ between \numrange{0.5}{5}. The curves have been labelled with the corresponding value for $\xi$. In addition to this the offset in $y$ due to the trap asymmetry is shown in the \textbf{bottom right} figure.}
     \label{fig:magnetic-field-curvature}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics{figures/data/eigen_frequency_xi_dependence.pdf}
-    \caption{Simulation results of the dependence of the eigenfrequency on $\xi$. These results are based on the data presented in \autoref{fig:magnetic-field-curvature}. The \textbf{top} figure shows the minimal trapping frequency such that $q_z \leq 0.4$. In the \textbf{middle} the corresponding eigenfrequencies of the modes are shown for $\Omega / 2\pi = \qty{2.5}{\kilo\hertz}$. The \textbf{bottom} figure shows the deviation from the center of the \ymode. The dashed lines are a linear interpolation of the data and only serve as a guide to the eyes.}
+    \caption{Simulation results of the dependence of the eigenfrequency on $\xi$. These results are based on the data presented in \autoref{fig:magnetic-field-curvature}. The \textbf{top} figure shows the minimal trapping frequency such that $q_z \leq 0.4$. In the \textbf{middle} the corresponding eigenfrequencies of the modes are shown for $\Omega / 2\pi = \qty{2.5}{\kilo\hertz}$. The \textbf{bottom} figure shows the deviation from the centre of the \ymode. The dashed lines are a linear interpolation of the data and only serve as a guide to the eyes.}
     \label{fig:eigen-frequency-xi-dependence}
 \end{figure}
 
@@ -42,7 +42,7 @@ At atmospheric pressure we determined the dependence of $\omega_{x,y}$ on $\Omeg
 
 \section{Measurements at low pressure}
 \label{sec:measurements-at-low-pressure}
-At \qty{1}{\milli\bar} the readout was performed using the Thorcam and analysed using our custom object tracking algorithm. The reason to no longer use laser readout is due to the heating of the particle. By equating the power of the laser to Stefan-Boltzmann law we find that, in equillibrium assuming no heat dissipation through air, the temperature of the particle could reach \qty{2500}{\kelvin}. Even if only a fraction of the laser power would reach the particle this would be enough to reach its Curie temperature of \qty{320}{\celsius}\cite{magnequench}. Lower laser powers leads to an insufficient signal-to-noise ratio. We will return to this in the discussion. For a more thorough analysis of heating refer to \cite{millen}.
+At \qty{1}{\milli\bar} the readout was performed using the Thorcam and analysed using our custom object tracking algorithm. The reason to no longer use laser readout is due to the heating of the particle. By equating the power of the laser to Stefan-Boltzmann law we find that, in equilibrium assuming no heat dissipation through air, the temperature of the particle could reach \qty{2500}{\kelvin}. Even if only a fraction of the laser power would reach the particle this would be enough to reach its Curie temperature of \qty{320}{\celsius}\cite{magnequench}. Lower laser powers leads to an insufficient signal-to-noise ratio. We will return to this in the discussion. For a more thorough analysis of heating refer to \cite{millen}.
 
 \begin{SCfigure}[][h]
     \centering
@@ -51,20 +51,20 @@ At \qty{1}{\milli\bar} the readout was performed using the Thorcam and analysed 
     \label{fig:xyz-mode-dependence-1mbar}
 \end{SCfigure}
 
-\autoref{fig:xyz-mode-dependence-1mbar} shows the dependence of $\omega_{x,y,z}$ at \qty{1}{\milli\bar}. We note that compared to the measurements at atmospheric pressures that the width of the peak is substantially smaller. Whilst this measurement shows a clear dependence of $\omega_{x,y,z}$ on $\Omega$, it is very difficult to see the \zmode. These measurements were obtained by continiously sweeping the driving frequency. Instead, we can do a `lock-in like' measurement as described in \autoref{chap:method}. An example of such a measurement is shown in \autoref{fig:xyz-mode-spectrum-1mbar}.
+\autoref{fig:xyz-mode-dependence-1mbar} shows the dependence of $\omega_{x,y,z}$ at \qty{1}{\milli\bar}. We note that compared to the measurements at atmospheric pressures that the width of the peak is substantially smaller. Whilst this measurement shows a clear dependence of $\omega_{x,y,z}$ on $\Omega$, it is very difficult to see the \zmode. These measurements were obtained by continuously sweeping the driving frequency. Instead, we can do a `lock-in like' measurement as described in \autoref{chap:method}. An example of such a measurement is shown in \autoref{fig:xyz-mode-spectrum-1mbar}.
 
 \begin{SCfigure}[][h]
     \centering
     \includegraphics{figures/data/xyz_mode_spectrum.pdf}
-    \caption{A PSD with a visible \xmode, \ymode and \zmode. The diagonal line is caused by the changing driving frequency. By looking at the magnitude along the diagonal line the eigenfrequencies and Q-factors can be }
+    \caption{A PSD with a visible \xmode, \ymode and \zmode. The diagonal line is caused by the changing driving frequency. By looking at the magnitude along the diagonal line the eigenfrequencies and Q-factors can be determined after a Lorentzian fit.}
     \label{fig:xyz-mode-spectrum-1mbar}
 \end{SCfigure}
 
 By performing this `lock-in like' measurement at multiple driving frequencies we can determine clear relations between $\omega_{x,y,z}$, the damping and the driving frequency. We do so by fitting a Lorentzian for each peak in the spectrum. The results are shown in \autoref{fig:xyz-mode-dependence-on-trapping-frequency-1mbar}. The fits are given by:
 \begin{align*}
-    \omega_x &= \frac{\qty{ 11.394193305319426 \pm 0.6168138640026458 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -130.8583313665632 \pm 35.52389434927459 }{\hertz}) \\
-    \omega_y &= \frac{\qty{ 8.61031330605224 \pm 0.3506111962572132 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -47.01583771770941 \pm 21.39358314176167 }{\hertz}) \\
-    \omega_z &= \frac{\qty{ 19.211603271753344 \pm 0.9219280210953733 }{\square\kilo\hertz}}{\Omega} % + (\qty{ -142.4727024226977 \pm 53.88080820095942 }{\hertz})
+    \omega_x &\propto \frac{\qty{ 11.394193305319426 \pm 0.6168138640026458 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -130.8583313665632 \pm 35.52389434927459 }{\hertz}) \\
+    \omega_y &\propto \frac{\qty{ 8.61031330605224 \pm 0.3506111962572132 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -47.01583771770941 \pm 21.39358314176167 }{\hertz}) \\
+    \omega_z &\propto \frac{\qty{ 19.211603271753344 \pm 0.9219280210953733 }{\square\kilo\hertz}}{\Omega} % + (\qty{ -142.4727024226977 \pm 53.88080820095942 }{\hertz})
 \end{align*}
 
 \begin{figure}
@@ -93,7 +93,7 @@ Visually it appears that $\gamma$ is constant as a function of $\Omega$. The que
 
 \section{Q-factor dependence on pressure}
 \label{sec:q-factor-dependence-on-pressure}
-Using an external coil we are able to excite the \xmode  and \ymode seperately. Ringdown measurements are performed to determine the pressure dependence on the Q-factor. The Q-factor in this case is defined as $Q = \omega_{x,y} \cdot \tau / 2$ where $\tau$ is the decay time of the oscillation ($\sim \exp\left(t / \tau\right)$). We qualitatively observed a strong dependence of the Q-factor on the driving amplitude. When the driving amplitude is too high we observe non-linear time dependent behaviour. The results in \autoref{fig:q-factor-pressure-dependence} are obtained with a sufficiently low driving amplitude.
+Using an external coil we are able to excite the \xmode  and \ymode separately. Ringdown measurements are performed to determine the pressure dependence on the Q-factor. The Q-factor in this case is defined as $Q = \omega_{x,y} \cdot \tau / 2$ where $\tau$ is the decay time of the oscillation ($\sim \exp\left(t / \tau\right)$). We qualitatively observed a strong dependence of the Q-factor on the driving amplitude. When the driving amplitude is too high we observe non-linear time dependent behaviour. The results in \autoref{fig:q-factor-pressure-dependence} are obtained with a sufficiently low driving amplitude.
 
 \begin{figure}[h]
     \centering
