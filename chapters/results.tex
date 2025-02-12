@@ -60,17 +60,19 @@ At \qty{1}{\milli\bar} the readout was performed using the Thorcam and analysed 
     \label{fig:xyz-mode-spectrum-1mbar}
 \end{SCfigure}
 
-By performing this `lock-in like' measurement at multiple driving frequencies we can determine clear relations between $\omega_{x,y,z}$, the damping and the driving frequency. We do so by fitting a Lorentzian for each peak in the spectrum. The results are shown in \autoref{fig:xyz-mode-dependence-on-trapping-frequency-1mbar}. The fits are given by:
-\begin{align*}
-    \omega_x &\propto \frac{\qty{ 11.394193305319426 \pm 0.6168138640026458 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -130.8583313665632 \pm 35.52389434927459 }{\hertz}) \\
-    \omega_y &\propto \frac{\qty{ 8.61031330605224 \pm 0.3506111962572132 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -47.01583771770941 \pm 21.39358314176167 }{\hertz}) \\
-    \omega_z &\propto \frac{\qty{ 19.211603271753344 \pm 0.9219280210953733 }{\square\kilo\hertz}}{\Omega} % + (\qty{ -142.4727024226977 \pm 53.88080820095942 }{\hertz})
-\end{align*}
+By performing this `lock-in like' measurement at multiple driving frequencies we can determine clear relations between $\omega_{x,y,z}$, the damping and the driving frequency. We do so by fitting a Lorentzian for each peak in the spectrum. The results are shown in \autoref{fig:xyz-mode-dependence-on-trapping-frequency-1mbar}.
+
+% The fits are given by:
+% \begin{align*}
+%     \omega_x &\propto \frac{\qty{ 11.394193305319426 \pm 0.6168138640026458 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -130.8583313665632 \pm 35.52389434927459 }{\hertz}) \\
+%     \omega_y &\propto \frac{\qty{ 8.61031330605224 \pm 0.3506111962572132 }{\square\kilo\hertz}}{\Omega} \\ % + (\qty{ -47.01583771770941 \pm 21.39358314176167 }{\hertz}) \\
+%     \omega_z &\propto \frac{\qty{ 19.211603271753344 \pm 0.9219280210953733 }{\square\kilo\hertz}}{\Omega} % + (\qty{ -142.4727024226977 \pm 53.88080820095942 }{\hertz})
+% \end{align*}
 
 \begin{figure}
     \centering
     \includegraphics{figures/data/xyz_mode_dependence_on_driving_frequency.pdf}
-    \caption{The dependence of $\omega_{x,y,z}$ and $\gamma_{x,y,z}$ on $\Omega$ at \qty{1}{\milli\bar}. The $\gamma$ in this case is the width of the Lorentzian fitted on the PSD. The dashed lines are a fit. The error bars are left out in the first figure because they are too small to be visible. The errorbars in the bottom figure are mostly dependent on the standard deviation on $\gamma$.}
+    \caption{The dependence of $\omega_{x,y,z}$ and $\gamma_{x,y,z}$ on $\Omega$ at \qty{1}{\milli\bar}. The $\gamma$ in this case is the width of the Lorentzian fitted on the PSD. The dashed lines are a fit. The error bars are left out in the first figure because they are too small to be visible. The errorbars in the bottom figure are mostly dependent on the standard deviation on $\gamma$. The \zmode at $\Omega/2\pi = \qty{3}{\kilo\hertz}$ was determined in two separate measurements.}
     \label{fig:xyz-mode-dependence-on-trapping-frequency-1mbar}
 \end{figure}
 
@@ -93,7 +95,7 @@ Visually it appears that $\gamma$ is constant as a function of $\Omega$. The que
 
 \section{Q-factor dependence on pressure}
 \label{sec:q-factor-dependence-on-pressure}
-Using an external coil we are able to excite the \xmode  and \ymode separately. Ringdown measurements are performed to determine the pressure dependence on the Q-factor. The Q-factor in this case is defined as $Q = \omega_{x,y} \cdot \tau / 2$ where $\tau$ is the decay time of the oscillation ($\sim \exp\left(t / \tau\right)$). We qualitatively observed a strong dependence of the Q-factor on the driving amplitude. When the driving amplitude is too high we observe non-linear time dependent behaviour. The results in \autoref{fig:q-factor-pressure-dependence} are obtained with a sufficiently low driving amplitude.
+Using an external coil we are able to excite the \xmode  and \ymode separately. Ringdown measurements are performed to determine the pressure dependence on the Q-factor. The Q-factor in this case is defined as $Q = \omega_{x,y,z} \tau / 2$ where $\tau$ is the decay time of the oscillation ($\sim \exp\left(t / \tau\right)$). We qualitatively observed a strong dependence of the Q-factor on the driving amplitude. When the driving amplitude is too high we observe non-linear time dependent behaviour. The results in \autoref{fig:q-factor-pressure-dependence} are obtained with a sufficiently low driving amplitude.
 
 \begin{figure}[h]
     \centering
@@ -102,7 +104,7 @@ Using an external coil we are able to excite the \xmode  and \ymode separately. 
     \label{fig:q-factor-pressure-dependence}
 \end{figure}
 
-An attempt was made to model the damping at low pressures. This was done in COMSOL where we used the estimated maximum velocity of the particle as a Lorentz factor in the magnetic field. We considered two cases: the particle induced a current in the tracks and the particle induced a current in a \ce{Ga} layer of \qty{1}{\micro\meter} thick around the trap. The reason to model the \ce{Ga}-layer is due to contamination during FIB milling. The results are shown in \autoref{tab:dissipation}. The dissipation of the \zmode is not included in this table because it has not been measured. Eddy current in the particle itself have not been taken into account.
+An attempt was made to model the damping at low pressures. This was done in COMSOL where we used the estimated maximum velocity of the particle as a Lorentz factor in the magnetic field. We considered two cases: the particle induced a current in the tracks and the particle induced a current in a \ce{Ga} layer of \qty{1}{\micro\meter} thick around the trap. The reason to model the \ce{Ga} layer is due to contamination during FIB milling. The results are shown in \autoref{tab:dissipation}. The dissipation of the \zmode is not included in this table because it has not been measured. Eddy current in the particle itself have not been taken into account.
 
 \begin{table}
     \centering
@@ -115,7 +117,7 @@ An attempt was made to model the damping at low pressures. This was done in COMS
         Ringdown measurements & \num{21.55 \pm 0.8} & \num{20.7 \pm 2.1} & --- \\
         \midrule
         Track dissipation sim. & \num{1.3878E-3} & \num{5.8018E-4} & \num{3.6026E-6} \\
-        \ce{Ga}-layer dissipation sim. & \num{0.595} & \num{0.393} & \num{0.272} \\
+        \ce{Ga} layer dissipation sim. & \num{0.595} & \num{0.393} & \num{0.272} \\
         % Thin wire model & \num{1.02} & \num{0.631} & \num{3.26} \\
         % Induction dissipation sim. & ??? & ??? & ??? \\
         \bottomrule
